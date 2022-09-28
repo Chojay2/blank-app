@@ -13,4 +13,10 @@ $paddingSizes: 2, 4, 8, 10, 12, 14, 16, 18, 20, 32, 40, 48, 50, 56, 60, 80, 86, 
     padding-top: #{$size} + 'px';
     padding-bottom: #{$size} + 'px';
   }
+  .ps-#{$size} {
+    margin-left: #{$size} + 'px';
+  }
+  .pe-#{$size} {
+    margin-right: #{$size} + 'px';
+  }
 }
