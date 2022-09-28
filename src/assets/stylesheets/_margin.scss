@@ -1,0 +1,17 @@
+$marginSizes: 2, 4, 8, 10, 12, 14, 16, 18, 20, 32, 40, 48, 56, 60, 80, 86, 100, 180;
+
+@each $size in $marginSizes {
+
+
+  .m-#{$size} {
+    margin: #{$size} + 'px';
+  }
+  .mx-#{$size} {
+    margin-right: #{$size} + 'px';
+    margin-left: #{$size} + 'px';
+  }
+  .my-#{$size} {
+    margin-top: #{$size} + 'px';
+    margin-bottom: #{$size} + 'px';
+  }
+}

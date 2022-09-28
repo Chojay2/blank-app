@@ -1,0 +1,10 @@
+$iconSizes: 10, 12, 14, 16, 18, 20, 24, 32, 48, 56, 60, 86;
+
+@each $size in $iconSizes {
+
+  .font-size-#{$size} {
+    font-size: #{$size} + 'px';
+  }
+}
+
+
