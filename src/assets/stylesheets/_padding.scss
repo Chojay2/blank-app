@@ -1,4 +1,4 @@
-$paddingSizes: 2, 4, 8, 10, 12, 14, 16, 18, 20, 32, 40, 48, 50, 56, 60, 80, 86, 100, 180;
+$paddingSizes: 0, 2, 4, 8, 10, 12, 14, 16, 18, 20, 32, 40, 48, 50, 56, 60, 80, 86, 100, 180;
 
 @each $size in $paddingSizes {
 
@@ -14,9 +14,15 @@ $paddingSizes: 2, 4, 8, 10, 12, 14, 16, 18, 20, 32, 40, 48, 50, 56, 60, 80, 86, 
     padding-bottom: #{$size} + 'px';
   }
   .ps-#{$size} {
-    margin-left: #{$size} + 'px';
+    padding-left: #{$size} + 'px';
   }
   .pe-#{$size} {
-    margin-right: #{$size} + 'px';
+    padding-right: #{$size} + 'px';
+  }
+  .pt-#{$size} {
+    padding-top: #{$size} + 'px';
+  }
+  .pb-#{$size} {
+    padding-bottom: #{$size} + 'px';
   }
 }

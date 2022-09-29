@@ -1,0 +1,41 @@
+<div class="w-100 post">
+    <div class="w-50 p-60 mx-auto form" fxLayout="column" fxLayoutGap="16">
+        <div class="w-100">
+            <h2 class="fs-28">Post your endorsement</h2>
+            <input type="text" class="w-100" placeholder="Headline*" pInputText >
+        </div>
+        <div class="w-100">
+            <h3 class="fs-22">Goal</h3>
+            <input type="text" class="w-50" placeholder="eg.500" pInputText >
+        </div>
+        <div class="w-100">
+            <h3 class="fs-22">Description*</h3>
+            <p-editor [style]="{'height':'200px'}"></p-editor>
+        </div>
+        <div>
+            <h3>Category</h3>
+            <div fxLayout="row wrap" fxLayoutGap="30">
+                <div class="my-10" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center" 
+                *ngFor="let number of [0,1,2,3,4,5]">
+                    <p-checkbox value="New York"></p-checkbox>
+                    <label for="ny">This is a checkbox</label>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>File upload</h3>
+            <div class="dropzone p-8 rounded">
+                <ngx-dropzone class="dropzone__container" (change)="onSelect($event)">
+                    <ngx-dropzone-label fxLayout="row" fxLayoutAlign="center center">
+                        <i class="pi pi-cloud-upload me-16" style="font-size: 40px"></i>
+                        Upload your files here
+                    </ngx-dropzone-label>
+                    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                    </ngx-dropzone-preview>
+                </ngx-dropzone>
+            </div>
+            <button class="btn-primary my-16">Save post</button>
+        </div>
+    </div>
+</div>
