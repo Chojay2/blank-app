@@ -9,14 +9,17 @@ import { EditorModule } from 'primeng/editor';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { CheckboxModule } from 'primeng/checkbox';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { PaginatorModule } from 'primeng/paginator';
 import { EndorsementComponent } from './screens/endorsement/endorsement.component';
 import { PostEndorsementComponent } from './screens/post-endorsement/post-endorsement.component';
+import { BlogPostComponent } from './screens/blog-post/blog-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EndorsementComponent,
-    PostEndorsementComponent
+    PostEndorsementComponent,
+    BlogPostComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { PostEndorsementComponent } from './screens/post-endorsement/post-endors
     ProgressBarModule,
     EditorModule,
     CheckboxModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
