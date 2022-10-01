@@ -7,8 +7,12 @@
 @import "assets/stylesheets/overwrite.scss";
 @import "assets/stylesheets/common.scss";
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+@import "assets/stylesheets/_color.scss";
+@import "assets/stylesheets/_shared.scss";
+@import "assets/stylesheets/_border-radius.scss";
 
 body {
     font-family: "Oxygen";
     font-size: 16px;
+    margin: 0;
 }

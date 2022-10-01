@@ -1,0 +1,30 @@
+@use 'src/assets/stylesheets/variables';
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'light': $light,
+  'lighten': $lighten,
+  'lightenMore': $lightenMore,
+  'grey': $grey,
+  'dark': $dark,
+  'darken': $darken,
+  'white': $white,
+  'black': $black,
+  'blue': $blue
+);
+
+@mixin color($colors, $className, $property) {
+  @each $color in $colors {
+    @each $name, $color-hex in $theme-colors {
+      @if $name == $color {
+        #{'.'+$className+'--'+$color} {
+          #{$property}: #{$color-hex} !important;
+        }
+      }
+    }
+  }
+}
+
+@include color(('white', 'primary'), 'color', 'color');
+@include color(('dark', 'white', 'grey', 'primary'), 'bg', 'background-color');
