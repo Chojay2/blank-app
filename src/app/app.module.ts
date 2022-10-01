@@ -13,25 +13,33 @@ import { PaginatorModule } from 'primeng/paginator';
 import { EndorsementComponent } from './screens/endorsement/endorsement.component';
 import { PostEndorsementComponent } from './screens/post-endorsement/post-endorsement.component';
 import { BlogPostComponent } from './screens/blog-post/blog-post.component';
+import { LoginComponent } from './auth/login/login.component';
+import {TabMenuModule} from "primeng/tabmenu";
+import {ButtonModule} from "primeng/button";
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EndorsementComponent,
     PostEndorsementComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    LoginComponent,
+    SignupComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FlexLayoutModule,
-    InputTextModule,
-    ProgressBarModule,
-    EditorModule,
-    CheckboxModule,
-    NgxDropzoneModule,
-    PaginatorModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FlexLayoutModule,
+        InputTextModule,
+        ProgressBarModule,
+        EditorModule,
+        CheckboxModule,
+        NgxDropzoneModule,
+        PaginatorModule,
+        TabMenuModule,
+        ButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
