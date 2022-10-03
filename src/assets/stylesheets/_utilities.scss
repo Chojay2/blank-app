@@ -91,6 +91,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &--secondary {
         border: 1px solid $secondary;
     }
+    &--10 {
+        border: 10px solid $black;
+    }
 }
 
 .rounded {

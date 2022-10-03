@@ -13,13 +13,17 @@ import { PaginatorModule } from 'primeng/paginator';
 import { EndorsementComponent } from './screens/endorsement/endorsement.component';
 import { PostEndorsementComponent } from './screens/post-endorsement/post-endorsement.component';
 import { BlogPostComponent } from './screens/blog-post/blog-post.component';
+import { MapComponent } from './components/map/map.component';
+import { ProgressComponent } from './components/progress/progress.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EndorsementComponent,
     PostEndorsementComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    MapComponent,
+    ProgressComponent
   ],
   imports: [
     BrowserModule,
