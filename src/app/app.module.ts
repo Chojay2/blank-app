@@ -15,6 +15,10 @@ import { PostEndorsementComponent } from './screens/post-endorsement/post-endors
 import { BlogPostComponent } from './screens/blog-post/blog-post.component';
 import { MapComponent } from './components/map/map.component';
 import { ProgressComponent } from './components/progress/progress.component';
+import { LoginComponent } from './auth/login/login.component';
+import {TabMenuModule} from "primeng/tabmenu";
+import {ButtonModule} from "primeng/button";
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,22 @@ import { ProgressComponent } from './components/progress/progress.component';
     CheckboxModule,
     NgxDropzoneModule,
     PaginatorModule
+    LoginComponent,
+    SignupComponent
   ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FlexLayoutModule,
+        InputTextModule,
+        ProgressBarModule,
+        EditorModule,
+        CheckboxModule,
+        NgxDropzoneModule,
+        PaginatorModule,
+        TabMenuModule,
+        ButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
