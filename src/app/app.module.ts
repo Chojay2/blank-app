@@ -19,6 +19,7 @@ import { LoginComponent } from './auth/login/login.component';
 import {TabMenuModule} from "primeng/tabmenu";
 import {ButtonModule} from "primeng/button";
 import { SignupComponent } from './auth/signup/signup.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,10 @@ import { SignupComponent } from './auth/signup/signup.component';
     PostEndorsementComponent,
     BlogPostComponent,
     MapComponent,
-    ProgressComponent
+    ProgressComponent,
+    LoginComponent,
+    SignupComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -38,23 +42,10 @@ import { SignupComponent } from './auth/signup/signup.component';
     EditorModule,
     CheckboxModule,
     NgxDropzoneModule,
-    PaginatorModule
-    LoginComponent,
-    SignupComponent
+    PaginatorModule,
+    TabMenuModule,
+    ButtonModule
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FlexLayoutModule,
-        InputTextModule,
-        ProgressBarModule,
-        EditorModule,
-        CheckboxModule,
-        NgxDropzoneModule,
-        PaginatorModule,
-        TabMenuModule,
-        ButtonModule
-    ],
   providers: [],
   bootstrap: [AppComponent]
 })
