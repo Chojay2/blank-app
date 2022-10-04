@@ -20,6 +20,7 @@ import {TabMenuModule} from "primeng/tabmenu";
 import {ButtonModule} from "primeng/button";
 import { SignupComponent } from './auth/signup/signup.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     ProgressComponent,
     LoginComponent,
     SignupComponent,
-    NavigationComponent
+    NavigationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
