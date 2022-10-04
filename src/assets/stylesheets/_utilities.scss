@@ -71,6 +71,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &-black {
         color: $black;
     }
+  &-white {
+    color: $white;
+  }
     &--black-75 {
         color: rgba($black, 0.75);
     }
@@ -119,6 +122,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &-black {
         background-color: $black;
     }
+  &-black-95 {
+    background-color: rgba($black, 0.95);
+  }
     &-white {
         background-color: $white;
     }
