@@ -30,6 +30,12 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
         border: 1px solid $primary;
         color: $primary;
     }
+  &-violet {
+    @extend  .btn;
+    background-color: $violet;
+    border: none;
+    color: $white;
+  }
     &-dark {
         @extend .btn;
         background-color: $dark;
@@ -77,6 +83,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &--black-75 {
         color: rgba($black, 0.75);
     }
+  &--violet {
+    color: $violet;
+  }
     &--center {
         text-align: center;
     }

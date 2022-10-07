@@ -14,13 +14,13 @@ import { EndorsementComponent } from './screens/endorsement/endorsement.componen
 import { PostEndorsementComponent } from './screens/post-endorsement/post-endorsement.component';
 import { BlogPostComponent } from './screens/blog-post/blog-post.component';
 import { MapComponent } from './components/map/map.component';
-import { ProgressComponent } from './components/progress/progress.component';
-import { LoginComponent } from './auth/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import {TabMenuModule} from "primeng/tabmenu";
 import {ButtonModule} from "primeng/button";
-import { SignupComponent } from './auth/signup/signup.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PublicProfileComponent } from './components/public-profile/public-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +29,11 @@ import { FooterComponent } from './components/footer/footer.component';
     PostEndorsementComponent,
     BlogPostComponent,
     MapComponent,
-    ProgressComponent,
     LoginComponent,
     SignupComponent,
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
+    PublicProfileComponent
   ],
   imports: [
     BrowserModule,
