@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,6 @@ export class SignupComponent implements OnInit {
   items: MenuItem[] | any;
   activeItem: MenuItem | any;
 
-
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +18,7 @@ export class SignupComponent implements OnInit {
       {label: 'Sign In'},
       {label: 'Sign Up'}
     ];
+
 
     this.activeItem = this.items[0];
   }
