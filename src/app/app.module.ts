@@ -17,6 +17,8 @@ import { LoginComponent } from './auth/login/login.component';
 import {TabMenuModule} from "primeng/tabmenu";
 import {ButtonModule} from "primeng/button";
 import { SignupComponent } from './auth/signup/signup.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,19 +29,21 @@ import { SignupComponent } from './auth/signup/signup.component';
     LoginComponent,
     SignupComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FlexLayoutModule,
-        InputTextModule,
-        ProgressBarModule,
-        EditorModule,
-        CheckboxModule,
-        NgxDropzoneModule,
-        PaginatorModule,
-        TabMenuModule,
-        ButtonModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FlexLayoutModule,
+    InputTextModule,
+    ProgressBarModule,
+    EditorModule,
+    CheckboxModule,
+    NgxDropzoneModule,
+    PaginatorModule,
+    TabMenuModule,
+    ButtonModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
