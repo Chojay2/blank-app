@@ -22,5 +22,4 @@ export class LoginComponent implements OnInit {
 
     this.activeItem = this.items[0];
   }
-
 }
