@@ -1,0 +1,51 @@
+<div class="px-60 my-30 w-80" fxLayout="column" fxLayoutAlign="start">
+  <div fxLayout="row" fxLayoutGap="60" fxLayoutAlign="center">
+    <div class="form w-50 py-30 px-100" fxLayout="column" fxLayoutGap="10" fxLayoutAlign="center center">
+      <img src="../../../assets/images/profile.png" alt="profile" width="100" height="100">
+      <p class="fs-28 fw-500 m-0">Devon Lane</p>
+      <p class="bg-black text-white fs-14 m-0 rounded--lg p-8">5SC</p>
+      <p class="bg-black text-white fs-14 mb-20 rounded--lg p-8">Gold member</p>
+      <div fxLayout="row" fxLayoutGap="30" fxLayoutAlign="center center">
+        <i class="pi pi-globe cursor--pointer" style="font-size: 26px"></i>
+        <i class="pi pi-twitter cursor--pointer" style="font-size: 26px"></i>
+        <i class="pi pi-facebook cursor--pointer" style="font-size: 26px"></i>
+      </div>
+      <p class="text-primary fs-20">This is the profile bio text. Quisque blandit nunc at metus maximus, at euismod sem iaculis. </p>
+      <a class="text--violet fs-28 fw-700 cursor--pointer my-20">Edit your profile</a>
+    </div>
+    <div class="w-50">
+      <h1>Profile headline</h1>
+      <p class=" fs-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+        at tempus erat. Vestibulum vehicula malesuada malesuada. Phasellus mattis eu turpis.
+      </p>
+      <p class="fw-600 fs-20">Engagement</p>
+      <p-progressBar value="30"></p-progressBar>
+      <button class="btn-violet my-20">Donate</button>
+    </div>
+  </div>
+  <div>
+    <h1>Your Posts</h1>
+    <div class="w-100 mx-auto py-50 post" fxLayout="row wrap" fxLayoutAlign="space-between">
+      <div class="w-30 position--relative" fxLayout="column" fxLayoutGap="20" fxLayoutAlign="center" *ngFor="let post of posts">
+        <img src="../../../assets//images//post__cover.png" class="position--relative" width="100%" height="420" alt="post cover">
+        <div class="post__chip bg-white pe-12 rounded--lg position--absolute cursor--pointer" fxLayout="row" fxLayoutGap="12" fxLayoutAlign="start center" fxFlexAlign="center">
+          <img src="../../../assets/images/profile.png" width="40" height="40" alt="profile">
+          <p class="text-primary">Karma Tenzin</p>
+        </div>
+        <h2 class="fs-28 m-0">{{post.title}}</h2>
+        <p class="text-primary fs-20 box--shadow-bottom m-0 pb-20">{{post.description}}</p>
+        <div class="text-primary" fxLayout="row" fxLayoutAlign="space-between center">
+          <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
+            <i class="pi pi-calendar me-16" ></i>
+            {{post.date}}
+          </p>
+          <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
+            <i class="pi pi-eye me-16" ></i>
+            {{post.views}}
+          </p>
+        </div>
+        <button class="btn-outline-dark rounded--lg">Read More</button>
+      </div>
+    </div>
+  </div>
+</div>

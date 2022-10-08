@@ -1,0 +1,11 @@
+@import "../../../assets/stylesheets/_variables.scss";
+
+.nav {
+  &__menu {
+    transition: 0.2s ease-in-out;
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}

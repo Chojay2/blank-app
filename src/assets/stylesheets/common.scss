@@ -18,6 +18,11 @@ h3 {
     font-size: 22px !important;
 }
 
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
 .transition {
     transition: 0.3s ease-in-out;
 }

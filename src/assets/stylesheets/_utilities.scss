@@ -30,6 +30,12 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
         border: 1px solid $primary;
         color: $primary;
     }
+  &-violet {
+    @extend  .btn;
+    background-color: $violet;
+    border: none;
+    color: $white;
+  }
     &-dark {
         @extend .btn;
         background-color: $dark;
@@ -71,9 +77,15 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &-black {
         color: $black;
     }
+  &-white {
+    color: $white;
+  }
     &--black-75 {
         color: rgba($black, 0.75);
     }
+  &--violet {
+    color: $violet;
+  }
     &--center {
         text-align: center;
     }
@@ -119,6 +131,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &-black {
         background-color: $black;
     }
+  &-black-95 {
+    background-color: rgba($black, 0.95);
+  }
     &-white {
         background-color: $white;
     }
@@ -148,6 +163,7 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
         position: fixed;
     }
     &--sticky {
-        position: sticky;
+        position: sticky !important;
+        top: 0;
     }
 }
