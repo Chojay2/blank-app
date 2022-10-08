@@ -163,6 +163,7 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
         position: fixed;
     }
     &--sticky {
-        position: sticky;
+        position: sticky !important;
+        top: 0;
     }
 }
