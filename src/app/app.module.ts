@@ -17,10 +17,12 @@ import { MapComponent } from './components/map/map.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import {TabMenuModule} from "primeng/tabmenu";
 import {ButtonModule} from "primeng/button";
-import { SignupComponent } from './components/auth/signup/signup.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PublicProfileComponent } from './components/public-profile/public-profile.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { PublicProfileComponent } from './components/public-profile/public-profi
     NgxDropzoneModule,
     PaginatorModule,
     TabMenuModule,
-    ButtonModule
+    ButtonModule,
+  HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
