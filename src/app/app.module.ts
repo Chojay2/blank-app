@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -25,6 +24,15 @@ import { PetitionComponent } from './components/petition/petition.component';
 import { UploadPetitionComponent } from './components/upload-petition/upload-petition.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { TabViewModule } from "primeng/tabview";
+import { SignupComponent } from "./components/auth/signup/signup.component";
+import {ReactiveFormsModule} from "@angular/forms";
+import { EventComponent } from './screens/event/event.component';
+import {AvatarGroupModule} from "primeng/avatargroup";
+import {AvatarModule} from "primeng/avatar";
+import { HostEventComponent } from './screens/event/host-event/host-event.component';
+import { CalenderComponent } from './screens/calender/calender.component';
+import {GMapModule} from "primeng/gmap";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -40,7 +48,11 @@ import { TabViewModule } from "primeng/tabview";
     BlogComponent,
     PetitionComponent,
     UploadPetitionComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    SignupComponent,
+    EventComponent,
+    HostEventComponent,
+    CalenderComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +66,12 @@ import { TabViewModule } from "primeng/tabview";
     PaginatorModule,
     TabMenuModule,
     TabViewModule,
-    ButtonModule
+    ButtonModule,
+    ReactiveFormsModule,
+    AvatarGroupModule,
+    AvatarModule,
+    HttpClientModule,
+    GMapModule
   ],
   providers: [],
   bootstrap: [AppComponent]
