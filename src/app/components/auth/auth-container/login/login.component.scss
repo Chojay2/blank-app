@@ -1,21 +1,11 @@
-@import "../../../../assets/stylesheets/variables";
+@import "../../../../../assets/stylesheets/variables";
 
 :host ::ng-deep.login-wrapper {
-  height: 100vh;
   margin: 0;
 
-    .p-tabmenu .p-tabmenu-nav {
-      display: flex;
-      justify-content: space-around;
-      font-size: 12px !important;
-    }
   .p-inputtext, .p-float-label label {
     font-size: 12px !important;
     width: 100%;
-  }
-  .p-tabmenu .p-tabmenu-nav .p-tabmenuitem {
-    width: 50% !important;
-    text-align: center !important;
   }
   .p-checkbox, .p-checkbox-box {
     width: 16px !important;
