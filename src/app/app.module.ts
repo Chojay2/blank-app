@@ -15,12 +15,16 @@ import { PostEndorsementComponent } from './screens/post-endorsement/post-endors
 import { BlogPostComponent } from './screens/blog-post/blog-post.component';
 import { MapComponent } from './components/map/map.component';
 import { LoginComponent } from './components/auth/login/login.component';
-import {TabMenuModule} from "primeng/tabmenu";
-import {ButtonModule} from "primeng/button";
-import { SignupComponent } from './components/auth/signup/signup.component';
+import { TabMenuModule } from "primeng/tabmenu";
+import { ButtonModule } from "primeng/button";
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PublicProfileComponent } from './components/public-profile/public-profile.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { PetitionComponent } from './components/petition/petition.component';
+import { UploadPetitionComponent } from './components/upload-petition/upload-petition.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { TabViewModule } from "primeng/tabview";
 
 @NgModule({
   declarations: [
@@ -30,10 +34,13 @@ import { PublicProfileComponent } from './components/public-profile/public-profi
     BlogPostComponent,
     MapComponent,
     LoginComponent,
-    SignupComponent,
     NavigationComponent,
     FooterComponent,
-    PublicProfileComponent
+    PublicProfileComponent,
+    BlogComponent,
+    PetitionComponent,
+    UploadPetitionComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +53,7 @@ import { PublicProfileComponent } from './components/public-profile/public-profi
     NgxDropzoneModule,
     PaginatorModule,
     TabMenuModule,
+    TabViewModule,
     ButtonModule
   ],
   providers: [],

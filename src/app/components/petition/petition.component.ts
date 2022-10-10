@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-endorsement',
-  templateUrl: './endorsement.component.html',
-  styleUrls: ['./endorsement.component.scss']
+  selector: 'app-petition',
+  templateUrl: './petition.component.html',
+  styleUrls: ['./petition.component.scss']
 })
-export class EndorsementComponent implements OnInit {
+export class PetitionComponent implements OnInit {
 
   responses = [
     {
@@ -23,8 +23,6 @@ export class EndorsementComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
-
   }
 
 }

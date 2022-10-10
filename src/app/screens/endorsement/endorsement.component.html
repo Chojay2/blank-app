@@ -6,7 +6,7 @@
                 consectetur adipiscing elit. Aliquam at tempus erat.
                  Vestibulum vehicula malesuada malesuada. Phasellus mattis eu turpis.
             </p>
-            <p class="w-80 fs-22 text--black-75">Quisque blandit nunc at metus maximus, at euismod sem iaculis. Maecenas
+            <p class="w-80 fs-18 text-primary">Quisque blandit nunc at metus maximus, at euismod sem iaculis. Maecenas
                 libero quam, vulputate ut turpis quis, malesuada placerat erat. Class aptent
                  taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                   Nullam consectetur quam nulla, at condimentum leo malesuada in. Integer vestibulum
@@ -20,12 +20,9 @@
             </div>
             <form action="" class="p-32" fxLayout="column" fxLayoutGap="32">
                 <p class="fs-28 fw-600 m-0">Thank you for signing</p>
-                <input id="float-input" class="fs-22" type="text" placeholder="Your Email" pInputText >
-                <textarea cols="30" rows="5" class="fs-22" placeholder="This is the comment" pInputText></textarea>
-                <div fxLayoutGap="10">
-                    <button class="btn-primary">Update endorsement</button>
-                    <button class="btn-lighten-more">Remove endorsement</button>
-                </div>
+                <input id="float-input" class="fs-18" type="text" placeholder="Your Email" pInputText >
+                <textarea cols="30" rows="5" class="fs-18" placeholder="This is the comment" pInputText></textarea>
+                <button class="btn-primary">Support this post</button>
             </form>
             <div class="px-32 py-16 mb-10 bg-light">
                 <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="16">
@@ -40,40 +37,27 @@
             </div>
         </div>
     </div>
-    <div class="w-50 mx-auto" fxLayout="column" fxLayoutGap="60" fxLayoutAlign="center center">
+    <div class="w-60 mx-auto" fxLayout="column" fxLayoutAlign="center center">
         <div class="w-100 px-60 py-48 bg-secondary rounded">
             <h2 class="fw-500">Leave a comment</h2>
-            <input type="text" class="w-100 fs-22" placeholder="Write your response..." pInputText >
+            <input type="text" class="box--shadow-bottom border--none rounded w-100 fs-20 p-16" placeholder="Write your response...">
         </div>
-        <div class="w-100">
+        <div class="w-100 bg-light py-20">
             <div class="w-100 px-60" fxLayout="row" fxLayoutAlign="space-between">
                 <h2 class="fw-500">Recent responses</h2>
                 <p class="text-primary cursor--pointer">See all</p>
             </div>
             <div class="w-100 px-60" fxLayout="column" fxLayoutGap="20">
-                <div class="border--primary rounded bg-white">
+                <div class="border--primary rounded bg-white" *ngFor="let response of responses">
                     <div class="p-20 box--shadow-bottom" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center">
                         <img src="../../../assets//images/profile.png" alt="Profile picture"
                         width="50" height="50">
                         <p class="text-primary fw-600">
-                            Adam Smith <span class="text-black fw-500">commented on</span> Home
+                            {{response.name}}<span class="text-black fw-500">commented on</span> Home
                         </p>
-                        <p>2 minutes ago</p>
+                        <p>{{response.time}}</p>
                     </div>
-                    <p class="p-20 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget luctus
-                        tellus. Duis euismod tellus arcu, vitae convallis lectus tincidunt ac. Morbi
-                         eros metus, suscipit nec eros id, dictum condimentum nisi.
-                    </p>
-                </div>
-                <div class="border--primary rounded bg-white">
-                    <div class="p-20 box--shadow-bottom" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center">
-                        <img src="../../../assets//images/profile.png" alt="Profile picture"
-                        width="50" height="50">
-                        <p class="text-primary fw-600">
-                            Adam Smith <span class="text-black fw-500">commented on</span> Home
-                        </p>
-                        <p>2 minutes ago</p>
-                    </div>
+                    <p class="p-20 m-0">{{response.description}}</p>
                 </div>
             </div>
         </div>

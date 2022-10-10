@@ -65,6 +65,12 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
         color: $primary;
         border: none;
     }
+  &-black {
+    @extend .btn;
+    background-color: $black;
+    color: $white;
+    border: none;
+  }
 }
 
 .text {
@@ -77,15 +83,18 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &-black {
         color: $black;
     }
-  &-white {
-    color: $white;
-  }
-    &--black-75 {
-        color: rgba($black, 0.75);
+    &-white {
+      color: $white;
     }
-  &--violet {
-    color: $violet;
-  }
+    &-white-60 {
+      color: rgba($white, 0.6);
+    }
+      &--black-75 {
+          color: rgba($black, 0.75);
+      }
+    &--violet {
+      color: $violet;
+    }
     &--center {
         text-align: center;
     }
@@ -105,6 +114,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     }
     &--10 {
         border: 10px solid $black;
+    }
+    &--none {
+      border: 0;
     }
 }
 
@@ -131,9 +143,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &-black {
         background-color: $black;
     }
-  &-black-95 {
-    background-color: rgba($black, 0.95);
-  }
+    &-black-95 {
+      background-color: rgba($black, 0.95);
+    }
     &-white {
         background-color: $white;
     }
@@ -145,6 +157,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     }
     &-lighten-more {
         background-color: $lightenMore;
+    }
+    &-dark {
+      background-color: $dark;
     }
 }
 
