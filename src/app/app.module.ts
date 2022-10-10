@@ -14,11 +14,16 @@ import { PostEndorsementComponent } from './screens/post-endorsement/post-endors
 import { BlogPostComponent } from './screens/blog-post/blog-post.component';
 import { MapComponent } from './components/map/map.component';
 import { LoginComponent } from './components/auth/login/login.component';
-import {TabMenuModule} from "primeng/tabmenu";
-import {ButtonModule} from "primeng/button";
+import { TabMenuModule } from "primeng/tabmenu";
+import { ButtonModule } from "primeng/button";
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PublicProfileComponent } from './components/public-profile/public-profile.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { PetitionComponent } from './components/petition/petition.component';
+import { UploadPetitionComponent } from './components/upload-petition/upload-petition.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { TabViewModule } from "primeng/tabview";
 import { SignupComponent } from "./components/auth/signup/signup.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import { EventComponent } from './screens/event/event.component';
@@ -37,33 +42,37 @@ import {HttpClientModule} from "@angular/common/http";
     BlogPostComponent,
     MapComponent,
     LoginComponent,
-    SignupComponent,
     NavigationComponent,
     FooterComponent,
     PublicProfileComponent,
+    BlogComponent,
+    PetitionComponent,
+    UploadPetitionComponent,
+    LandingPageComponent,
     SignupComponent,
     EventComponent,
     HostEventComponent,
     CalenderComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FlexLayoutModule,
-        InputTextModule,
-        ProgressBarModule,
-        EditorModule,
-        CheckboxModule,
-        NgxDropzoneModule,
-        PaginatorModule,
-        TabMenuModule,
-        ButtonModule,
-        ReactiveFormsModule,
-        AvatarGroupModule,
-        AvatarModule,
-      HttpClientModule,
-      GMapModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FlexLayoutModule,
+    InputTextModule,
+    ProgressBarModule,
+    EditorModule,
+    CheckboxModule,
+    NgxDropzoneModule,
+    PaginatorModule,
+    TabMenuModule,
+    TabViewModule,
+    ButtonModule,
+    ReactiveFormsModule,
+    AvatarGroupModule,
+    AvatarModule,
+    HttpClientModule,
+    GMapModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

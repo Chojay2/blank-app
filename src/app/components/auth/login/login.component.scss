@@ -1,31 +1,15 @@
-@import "../../../../assets/stylesheets/variables";
+@import "../../../../assets/stylesheets/_variables.scss";
 
 :host ::ng-deep.login-wrapper {
   height: 100vh;
   margin: 0;
 
-    .p-tabmenu .p-tabmenu-nav {
-      display: flex;
-      justify-content: space-around;
-      font-size: 12px !important;
-    }
-  .p-inputtext, .p-float-label label {
-    font-size: 12px !important;
-    width: 100%;
+  li {
+    width: 50%;
   }
-  .p-tabmenu .p-tabmenu-nav .p-tabmenuitem {
-    width: 50% !important;
-    text-align: center !important;
+  .p-tabview-nav-link {
+    justify-content: center;
   }
-  .p-checkbox, .p-checkbox-box {
-    width: 16px !important;
-    height: 16px !important;
-  }
-
-  .p-button {
-    font-size: 12px !important;
-  }
-
   .signin-potions {
     border-top: 2px solid $primary ;
   }
