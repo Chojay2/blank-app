@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {LoginFormModel} from "../../../models/shared.models";
+// @ts-ignore
+import {LoginFormModel} from "../../models/shared.models";
 import {Observable} from "rxjs";
 
 @Injectable({
