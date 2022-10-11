@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EndorsementComponent } from './screens/endorsement/endorsement.component';
 
 @Component({
   selector: 'app-root',
