@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
 
 @Component({
   selector: 'app-endorsement',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./endorsement.component.scss']
 })
 export class EndorsementComponent implements OnInit {
+  endorsementPosts: any;
+  endorsementPost: any;
 
   responses = [
     {
@@ -20,11 +23,25 @@ export class EndorsementComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private endorsementService: EndorsementService
+  ) { }
 
   ngOnInit(): void {
 
+    this.endorsementService.getAllPost()
+      .subscribe(data => {
+        this.endorsementPosts = data;
+        console.log(this.endorsementPosts)
+      })
 
+    let id = "63387bdcba184acd8944f8bb";
+
+    this.endorsementService.getAPost(id)
+      .subscribe(data => {
+        this.endorsementPost = data;
+        console.log(this.endorsementPost)
+      })
   }
 
 }
