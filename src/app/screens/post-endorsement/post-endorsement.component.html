@@ -2,11 +2,11 @@
     <form [formGroup]="endorsementForm" (submit)="onFormSubmit(endorsementForm)" class="w-50 p-60 mx-auto form" fxLayout="column" fxLayoutGap="16">
         <div class="w-100">
             <h2 class="fs-28">Post your endorsement</h2>
-            <input type="text" class="w-100 formControlName="title" fs-18 bg-secondary border--none rounded p-16" placeholder="Headline*">
+            <input type="text" class="w-100 fs-18 bg-secondary border--none rounded p-16" formControlName="title" placeholder="Headline*">
         </div>
         <div class="w-100">
             <h3 class="fs-22">Goal</h3>
-            <input type="number" class="w-50 formControlName="goal" fs-18 bg-secondary border--none rounded p-16" placeholder="eg.500">
+            <input type="number" class="w-50 fs-18 bg-secondary border--none rounded p-16" formControlName="goal" placeholder="eg.500">
         </div>
         <div class="w-100">
             <h3 class="fs-22">Description*</h3>
