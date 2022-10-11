@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
 
 @Component({
   selector: 'app-post-endorsement',
@@ -6,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-endorsement.component.scss']
 })
 export class PostEndorsementComponent implements OnInit {
+  endorsementForm = this.fb.group({
+    title: ['', Validators.required],
+    goal: ['', Validators.required],
+    description: ['', Validators.required]
+  });
+  showValidationErros: boolean = false;
 
   files: File[] = [];
 
@@ -39,9 +47,27 @@ export class PostEndorsementComponent implements OnInit {
   //   }
   // }
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private endorsementService: EndorsementService) { }
 
   ngOnInit(): void {
+  }
+
+  onFormSubmit(form: FormGroup) {
+    if (!form.valid) {
+     this.showValidationErros = true;
+     return;
+    };
+    this.showValidationErros = false;
+
+    var body = {
+      title: form.value.title,
+      goal: form.value.goal,
+      description: form.value.description
+    }
+    this.endorsementService.uploadAPost(body).subscribe(response=>{
+      console.log(response)
+    })
+    form.reset();
   }
 
 }
