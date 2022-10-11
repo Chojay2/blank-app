@@ -31,3 +31,15 @@ input[type="checkbox" i] {
   width: 20px;
   height: 20px;
 }
+
+input[type='checkbox'] {
+  accent-color: $primary;
+}
+
+.p-rating .p-rating-icon.pi-star-fill {
+  color: $dark !important;
+}
+
+.p-dialog {
+  text-align: center !important;
+}
