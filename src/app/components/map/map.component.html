@@ -95,55 +95,48 @@
     </div>
     <div class="w-40 form px-20 py-40 transition  text--center" fxLayout="column">
       <h2 class="w-100">{{anchorValue}}'s Insights</h2>
-      <div class="w-100 my-40 container" fxLayout="row wrap" fxLayoutAlign="space-around center">
+      <div class="w-100 my-40 container" fxLayout="row" fxLayoutAlign="space-around center">
         <div>
-          <div class="progress">
-            <span class="title timer" data-from="0" data-to="85" data-speed="1500">85</span>
-            <div class="overlay"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-          </div>
+          <circle-progress class="w-100"
+            [percent]="90"
+            [radius]="100"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="0"
+            [outerStrokeColor]="'#303030'"
+            [animation]="true"
+            [animationDuration]="300"
+            backgroundColor="#EAEBF6">
+          </circle-progress>
           <p class="text-primary">Of Overall Posts</p>
         </div>
         <div>
-          <div class="progress">
-            <span class="title timer" data-from="0" data-to="70" data-speed="1500">70</span>
-            <div class="overlay"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-          </div>
+          <circle-progress class="w-100"
+            [percent]="90"
+            [radius]="100"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="0"
+            [outerStrokeColor]="'#303030'"
+            [animation]="true"
+            [animationDuration]="300"
+            backgroundColor="#EAEBF6">
+          </circle-progress>
           <p class="text-primary">Engagement</p>
         </div>
         <div>
-          <div class="progress">
-            <span class="title timer" data-from="0" data-to="70" data-speed="1500">70</span>
-            <div class="overlay"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-          </div>
+          <circle-progress class="w-100"
+            [percent]="90"
+            [radius]="100"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="0"
+            [outerStrokeColor]="'#303030'"
+            [animation]="true"
+            [animationDuration]="300"
+            backgroundColor="#EAEBF6">
+          </circle-progress>
           <p class="text-primary">Reach</p>
         </div>
-        <!--            <div class="progress">-->
-        <!--                <div class="mb-20 py-30 px-48 rounded&#45;&#45;circle border&#45;&#45;10 border">-->
-        <!--                    <p class="fs-24 fw-700">20%</p>-->
-        <!--                </div>-->
-        <!--                <p class="text-primary">Of Overall Posts</p>-->
-        <!--            </div>-->
-        <!--            <div class="progress">-->
-        <!--                <div class="mb-20 py-30 px-48 rounded&#45;&#45;circle border&#45;&#45;10 border">-->
-        <!--                    <p class="fs-24 fw-700">70%</p>-->
-        <!--                </div>-->
-        <!--                <p class="text-primary">Engagement</p>-->
-        <!--            </div>-->
-        <!--            <div class="progress">-->
-        <!--                <div class="mb-20 py-30 px-48 rounded&#45;&#45;circle border&#45;&#45;10 border">-->
-        <!--                    <p class="fs-24 fw-700">20%</p>-->
-        <!--                </div>-->
-        <!--                <p class="text-primary">Reach</p>-->
-        <!--            </div>-->
       </div>
       <button class="btn-dark rounded--lg w-100">See Posts</button>
     </div>
   </div>
-
 </div>

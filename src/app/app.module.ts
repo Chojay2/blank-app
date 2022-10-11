@@ -38,6 +38,10 @@ import { AuthContainerComponent } from './components/auth/auth-container/auth-co
 import { CommentComponent } from "./components/comment/comment.component";
 import { DialogModule } from 'primeng/dialog';
 import { RatingModule } from 'primeng/rating';
+import { ProfileListComponent } from './components/profile-list/profile-list.component';
+import { EndorsementListComponent } from './components/endorsement-list/endorsement-list.component';
+import { PetitionListComponent } from './components/petition-list/petition-list.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 @NgModule({
@@ -61,7 +65,10 @@ import { RatingModule } from 'primeng/rating';
     HostEventComponent,
     CalenderComponent,
     AuthContainerComponent,
-    CommentComponent
+    CommentComponent,
+    ProfileListComponent,
+    EndorsementListComponent,
+    PetitionListComponent
   ],
   imports: [
     BrowserModule,
@@ -83,8 +90,15 @@ import { RatingModule } from 'primeng/rating';
     GMapModule,
     DialogModule,
     RatingModule,
-    BrowserAnimationsModule
-    ],
+    BrowserAnimationsModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    }) ],
   providers: [],
   bootstrap: [AppComponent]
 })
