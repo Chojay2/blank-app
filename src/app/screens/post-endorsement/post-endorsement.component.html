@@ -1,8 +1,9 @@
 <div class="w-100 post">
     <div class="w-50 p-60 mx-auto form" fxLayout="column" fxLayoutGap="16">
+        <form [formGroup]="endorsementForm" (submit)="onFormSubmit(endorsementForm)">
         <div class="w-100">
             <h2 class="fs-28">Post your endorsement</h2>
-            <input type="text" class="w-100" placeholder="Headline*" pInputText >
+            <input type="text" class="w-100" formControlName="title" placeholder="Headline*" pInputText >
         </div>
         <div class="w-100">
             <h3 class="fs-22">Goal</h3>
@@ -10,12 +11,12 @@
         </div>
         <div class="w-100">
             <h3 class="fs-22">Description*</h3>
-            <p-editor [style]="{'height':'200px'}"></p-editor>
+            <p-editor [style]="{'height':'200px'}" formControlName="description"></p-editor>
         </div>
         <div>
             <h3>Category</h3>
             <div fxLayout="row wrap" fxLayoutGap="30">
-                <div class="my-10" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center" 
+                <div class="my-10" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center"
                 *ngFor="let number of [0,1,2,3,4,5]">
                     <p-checkbox value="New York"></p-checkbox>
                     <label for="ny">This is a checkbox</label>
@@ -35,7 +36,8 @@
                     </ngx-dropzone-preview>
                 </ngx-dropzone>
             </div>
-            <button class="btn-primary mt-38 mb-16">Save post</button>
+            <button type="submit" class="btn-primary mt-38 mb-16">Save post</button>
         </div>
+    </form>
     </div>
 </div>

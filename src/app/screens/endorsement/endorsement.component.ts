@@ -9,8 +9,8 @@ import { EndorsementService } from "../../service/endorsement.service";
 export class EndorsementComponent implements OnInit {
   endorsementPosts: any;
   endorsementPost: any;
-  
-  
+
+
   constructor(
     private endorsementService: EndorsementService
   ) { }
@@ -19,18 +19,18 @@ export class EndorsementComponent implements OnInit {
 
     // Fetch all post
 
-    // this.endorsementService.getAllPost()
-    //   .subscribe(data => {
-    //     this.endorsementPosts = data;   
-    //     console.log(this.endorsementPosts)   
-    //   })
+    this.endorsementService.getAllPost()
+      .subscribe(data => {
+        this.endorsementPosts = data;
+        console.log(this.endorsementPosts)
+      })
 
     let id = "63387bdcba184acd8944f8bb";
 
     this.endorsementService.getAPost(id)
       .subscribe(data => {
-        this.endorsementPost = data;   
-        console.log(this.endorsementPost)   
+        this.endorsementPost = data;
+        console.log(this.endorsementPost)
       })
   }
 
