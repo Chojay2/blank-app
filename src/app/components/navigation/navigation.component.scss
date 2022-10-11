@@ -8,4 +8,8 @@
       color: $white;
     }
   }
+  .cards:hover {
+    background-color: $secondary;
+    border: 1px solid $primary;
+  }
 }

@@ -16,4 +16,10 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayModal: boolean;
+
+  showModalDialog() {
+    this.displayModal = true;
+  }
+
 }
