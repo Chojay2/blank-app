@@ -11,6 +11,7 @@ import { EndorsementService } from 'src/app/service/endorsement.service';
 export class PostEndorsementComponent implements OnInit {
   endorsementForm = this.fb.group({
     title: ['', Validators.required],
+    goal: ['', Validators.required],
     description: ['', Validators.required]
   });
   showValidationErros: boolean = false;
@@ -41,11 +42,12 @@ export class PostEndorsementComponent implements OnInit {
 
     var body = {
       title: form.value.title,
+      goal: form.value.goal,
       description: form.value.description
     }
     this.endorsementService.uploadAPost(body).subscribe(response=>{
       console.log(response)
-      console.log('sent1');
+      console.log('sent');
     })
     form.reset();
   }
