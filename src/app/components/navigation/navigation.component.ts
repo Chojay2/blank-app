@@ -10,7 +10,7 @@ export class NavigationComponent implements OnInit {
   lists: string[];
 
   constructor() {
-    this.lists = ['Home', 'About', 'Volunteer', 'Events', 'News'];
+    this.lists = ['Home', 'Endorsement', 'Petition'];
   }
 
   ngOnInit(): void {
