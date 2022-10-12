@@ -42,6 +42,8 @@ import { ProfileListComponent } from './components/profile-list/profile-list.com
 import { EndorsementListComponent } from './components/endorsement-list/endorsement-list.component';
 import { PetitionListComponent } from './components/petition-list/petition-list.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { BlogCreationComponent } from './components/blog-creation/blog-creation.component';
+import { ShareComponent } from './components/share/share.component';
 
 
 @NgModule({
@@ -68,7 +70,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     CommentComponent,
     ProfileListComponent,
     EndorsementListComponent,
-    PetitionListComponent
+    PetitionListComponent,
+    BlogCreationComponent,
+    ShareComponent
   ],
   imports: [
     BrowserModule,
