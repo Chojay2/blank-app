@@ -35,6 +35,7 @@ import { CalenderComponent } from './screens/calender/calender.component';
 import {GMapModule} from "primeng/gmap";
 import {HttpClientModule} from "@angular/common/http";
 import { AuthContainerComponent } from './components/auth/auth-container/auth-container.component';
+
 import { CommentComponent } from "./components/comment/comment.component";
 import { DialogModule } from 'primeng/dialog';
 import { RatingModule } from 'primeng/rating';
@@ -67,12 +68,14 @@ import { ShareComponent } from './components/share/share.component';
     HostEventComponent,
     CalenderComponent,
     AuthContainerComponent,
+
     CommentComponent,
     ProfileListComponent,
     EndorsementListComponent,
     PetitionListComponent,
     BlogCreationComponent,
     ShareComponent
+
   ],
   imports: [
     BrowserModule,
@@ -93,6 +96,7 @@ import { ShareComponent } from './components/share/share.component';
     HttpClientModule,
     GMapModule,
     DialogModule,
+
     RatingModule,
     BrowserAnimationsModule,
     NgCircleProgressModule.forRoot({
@@ -103,6 +107,7 @@ import { ShareComponent } from './components/share/share.component';
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
     }) ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
