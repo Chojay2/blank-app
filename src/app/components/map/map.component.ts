@@ -13,7 +13,9 @@ export class MapComponent implements OnInit {
   toggle(button) {
     this.anchorValue = button.id;
  }
-    constructor() { }
+    constructor() {
+      
+     }
 
   ngOnInit(): void {
   }
