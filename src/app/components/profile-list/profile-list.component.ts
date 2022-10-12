@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from 'src/app/services/profile/profile.service';
 
 @Component({
   selector: 'app-profile-list',
@@ -6,20 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-list.component.scss']
 })
 export class ProfileListComponent implements OnInit {
+  userProfiles: any;
 
-  constructor() { }
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+
+    this.profileService.getAllUser()
+      .subscribe(data => {
+        this.userProfiles = data;
+        // this.objectLenght = Object.keys(this.userProfiles).length
+        console.log(this.userProfiles)
+      })
   }
-
-  profiles = [
-    {
-      image: '',
-      name: 'Devon Lane',
-      description: 'This is the profile bio text. Quisque blandit nunc ats.... ',
-      posts: '10 posts',
-      views: '2k views'
-    }
-  ];
-
 }
