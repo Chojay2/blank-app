@@ -11,13 +11,8 @@ export class PetitionListComponent implements OnInit {
   posts: any;
   items: string[];
 
-<<<<<<< HEAD
   constructor(private petitionService: PetitionService, private router: Router) {
     this.items = ['All', 'Technology', 'Sports', 'Programming', 'Something', 'Anything'];
-=======
-  constructor() {
-    this.items = ['All', 'Technology', 'Sports', 'Programming'];
->>>>>>> e524eab6ba0136820059629372f80aff7c04d597
 
   }
 
