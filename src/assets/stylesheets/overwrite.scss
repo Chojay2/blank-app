@@ -66,3 +66,19 @@ input[type='checkbox'] {
 .p-progressbar {
   height: 16px !important;
 }
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background-color: $secondary !important;
+  color: $dark !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+.p-dialog .p-dialog-content {
+  padding: 0 !important;
+  //border-top-left-radius: 10px !important;
+  //border-top-right-radius: 10px !important;
+}

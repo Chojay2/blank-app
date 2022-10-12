@@ -1,0 +1,13 @@
+@import "../../../assets/stylesheets/_variables.scss";
+
+.card {
+  cursor: pointer;
+  border-radius: 10px;
+  &:hover {
+    border: 1px solid $primary;
+    box-shadow: -1px 27px 51px -34px rgba(108,117,132,0.48);
+    -webkit-box-shadow: -1px 27px 51px -34px rgba(108,117,132,0.48);
+    -moz-box-shadow: -1px 27px 51px -34px rgba(108,117,132,0.48);
+  }
+}
+

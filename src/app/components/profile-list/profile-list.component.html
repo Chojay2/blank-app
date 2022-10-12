@@ -1,13 +1,14 @@
 <div class="w-100 my-40">
-  <div class="w-90 mx-auto" fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="w-80 mx-auto" fxLayout="row" fxLayoutAlign="space-between center">
     <h1>Discover Innovators</h1>
     <span fxLayout="row" fxLayoutAlign="start center">
       <i class="pi pi-search position--absolute text--black-75 ms-16"></i>
       <input type="text" class="bg-secondary px-50 rounded--md" placeholder="Search">
     </span>
   </div>
-  <div class="w-90 mx-auto" fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="40">
-    <div class="p-28 mt-40 w-20 rounded form" *ngFor="let profile of userProfiles">
+<div class="w-90 mx-auto">
+  <div class="w-100" fxLayout="row wrap" fxLayoutAlign="center">
+    <div class="p-28 card transition mt-40 me-40 w-20 form"*ngFor="let profile of userProfiles">
       <div>
         <a [routerLink]="['/user', profile._id]">asdasd</a>
         <div class="w-100 text--center">
