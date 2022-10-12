@@ -1,7 +1,11 @@
 <nav class="nav bg-white w-100 px-48 py-20 fs-18 fw-700 box--shadow-bottom" fxLayout="row" fxLayoutAlign="space-between center">
   <ul class="m-0 p-0" fxLayout="row" fxLayoutGap="30" fxLayoutAlign="start center">
     <img src="../../../assets/images/logo.svg" class="cursor--pointer" alt="logo" width="127" height="79">
-    <li class="nav__menu rounded--md py-8 px-24" *ngFor="let list of lists">{{list}}</li>
+    <li class="nav__menu rounded--md py-8 px-24" routerLink="/home">Home</li>
+    <li class="nav__menu rounded--md py-8 px-24" routerLink="/endorsement">Endorsement</li>
+    <li class="nav__menu rounded--md py-8 px-24" routerLink="/petition">Petition</li>
+    <li class="nav__menu rounded--md py-8 px-24" routerLink="/blog">Blog</li>
+    <li class="nav__menu rounded--md py-8 px-24">Recommendations</li>
   </ul>
   <div fxLayout="row" fxLayoutGap="30" fxLayoutAlign="center center">
     <div class="cursor--pointer" fxLayout="row" fxLayoutGap="8" fxLayoutAlign="center center">
@@ -11,24 +15,23 @@
     </div>
     <p class="cursor--pointer nav__menu rounded--md py-8 px-24" (click)="showModalDialog()">Create Post</p>
     <p-dialog header="Choose Post Type" [(visible)]="displayModal" [modal]="true" [style]="{width: '45vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
-      <div class="w-100" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="48">
-        <div class="rounded--md cards cursor--pointer transition text--center p-18 border--secondary">
+      <div class="w-100 py-50 px-20" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="40">
+        <div class="rounded--md cards cursor--pointer transition text--center p-18 border--secondary" routerLink="/create-petition" (click)="hideModalDialog()">
           <p class="text-black">Problem Statement/Petition Post</p>
           <img src="../../../assets/images/petition.png" alt="petition" width="90" height="90">
           <p class="text-primary">Lorem ipsum dolor sit amet, </p>
         </div>
-        <div class="rounded--md cards cursor--pointer transition text--center p-18 border--secondary">
+        <div class="rounded--md cards cursor--pointer transition text--center p-18 border--secondary" routerLink="/create-post" (click)="hideModalDialog()">
           <p class="text-black">Innovative Solution Post</p>
           <img src="../../../assets/images/solution.png" alt="petition" width="90" height="90">
           <p class="text-primary">Lorem ipsum dolor sit amet, </p>
         </div>
-        <div class="rounded--md cards cursor--pointer transition text--center p-18 border--secondary">
+        <div class="rounded--md cards cursor--pointer transition text--center p-18 border--secondary" routerLink="/create-endorsement" (click)="hideModalDialog()">
           <p class="text-black">Endorsement Post</p>
           <img src="../../../assets/images/endorsement.png" alt="petition" width="100" height="90">
           <p class="text-primary">Lorem ipsum dolor sit amet, </p>
         </div>
       </div>
-      <button class="btn-dark rounded--lg my-16">Create Post</button>
     </p-dialog>
   </div>
 </nav>

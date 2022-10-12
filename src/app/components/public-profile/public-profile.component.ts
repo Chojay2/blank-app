@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from "../../services/api.service";
 
 @Component({
   selector: 'app-public-profile',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class PublicProfileComponent implements OnInit {
 
   items: string[];
+  userDetail: any;
+  userPost: any;
   posts = [
     {
       cover: '',
@@ -38,9 +41,20 @@ export class PublicProfileComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-  }
+    this.api.getUser(localStorage.getItem('id') as string).subscribe(val=> {
 
+      this.userDetail = val
+      console.log(this.userDetail)
+    }
+    )
+    this.api.getPost(localStorage.getItem('id') as string).subscribe(value=> {
+
+        this.userPost = value
+        console.log(this.userPost)
+      }
+    )
+  }
 }
