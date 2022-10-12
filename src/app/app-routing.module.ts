@@ -10,11 +10,13 @@ import { BlogPostComponent } from "./screens/blog-post/blog-post.component";
 import { PostEndorsementComponent } from "./screens/post-endorsement/post-endorsement.component";
 import { UploadPetitionComponent } from "./components/upload-petition/upload-petition.component";
 import { BlogCreationComponent } from "./components/blog-creation/blog-creation.component";
+import { PetitionComponent } from './components/petition/petition.component';
 
 const routes: Routes = [
   {path: 'signin', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'petition', component: PetitionListComponent},
+  {path: 'petition/:id', component: PetitionComponent},
   {path: 'endorsement', component: EndorsementListComponent},
   {path: 'blog', component: BlogPostComponent},
   {path: 'create-endorsement', component: PostEndorsementComponent},

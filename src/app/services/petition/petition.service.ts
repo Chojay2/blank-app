@@ -1,11 +1,11 @@
+import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams, HttpRequest,  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EndorsementService {
+export class PetitionService {
 
   constructor(private http: HttpClient) { }
 
@@ -13,23 +13,23 @@ export class EndorsementService {
 
 
   getAllPost(): Observable<any> {
-    return this.http.get(`${this.baseURL}/public-endorsments/get-endorsements?skip=0&limit=9`)
+    return this.http.get(`${this.baseURL}/public-petitions/get-petitions?skip=0&limit=20`)
  }
 
  getAPost(id: any): Observable<any> {
-  return this.http.get(`${this.baseURL}/public-endorsments/get-endorsement?endorsementId=${id}`)
+  return this.http.get(`${this.baseURL}/public-petitions/get-petition?petitionId=${id}`)
 }
 
   uploadAPost(data: any): Observable<any> {
-  return this.http.post(`${this.baseURL}/endorsments/add-endorsement`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NDk5MTkzfQ.K4XX_II0lJojTOpxypRw0spbg5hgNs5xwfLG7FWqHN0')})
+  return this.http.post(`${this.baseURL}/petitions/add-petition`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NDk5MTkzfQ.K4XX_II0lJojTOpxypRw0spbg5hgNs5xwfLG7FWqHN0')})
   }
 
   updateData(data: any, id: string): Observable<any> {
-    return this.http.post(`${this.baseURL}/endorsments/edit-endorsement`, data)
+    return this.http.post(`${this.baseURL}/petitions/edit-petition`, data)
   }
 
   deleteData(id: any): Observable<any> {
-    return this.http.post(`${this.baseURL}/delete-endorsement`, id)
+    return this.http.post(`${this.baseURL}/delete-petition`, id)
 }
 
   addGallery(data: any, file: File): Observable<any> {
@@ -47,8 +47,7 @@ export class EndorsementService {
       headers: header
     };
 
-    const req = new HttpRequest('POST', `${this.baseURL}/endorsments/add-endorsement`, formData, options);
+    const req = new HttpRequest('POST', `${this.baseURL}/petitions/add-petition`, formData, options);
     return this.http.request(req);
   }
-
 }

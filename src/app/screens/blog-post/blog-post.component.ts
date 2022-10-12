@@ -10,12 +10,12 @@ import { EndorsementService } from 'src/app/services/endorsement/endorsement.ser
 export class BlogPostComponent implements OnInit {
   posts: any;
   items: string[];
-  
 
-  constructor(private endorsementService: EndorsementService) { 
+
+  constructor(private endorsementService: EndorsementService) {
     this.items = ['All', 'Technology', 'Sports', 'Programming', 'Something', 'Anything'];
-    
-    
+
+
   }
 
   ngOnInit(): void {
