@@ -25,10 +25,12 @@
                 <img src="../../../assets//images//post__cover.png" class="position--relative" width="100%" height="420" alt="post cover">
                 <div class="post__chip bg-white pe-12 rounded--lg position--absolute cursor--pointer" fxLayout="row" fxLayoutGap="12" fxLayoutAlign="start center" fxFlexAlign="center">
                     <img src="../../../assets/images/profile.png" width="40" height="40" alt="profile">
-                    <p class="text-primary">{{post.user[1].name}}</p>
+                    <p class="text-primary">{{post.user.name}}</p>
                 </div>
                 <h2 class="fs-28 m-0">{{post.title}}</h2>
-                <p class="text-primary fs-20 box--shadow-bottom m-0 pb-20">{{post.description}}</p>
+                <div class="text-primary fs-20 box--shadow-bottom m-0 pb-20 text-editor">
+                  <div class="" [innerHTML]="post.description">
+                  </div></div>
               <div class="text-primary" fxLayout="row" fxLayoutAlign="space-between center">
                 <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
                   <i class="pi pi-calendar me-16" ></i>

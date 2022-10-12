@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PetitionService } from 'src/app/services/petition/petition.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-petition-list',
@@ -6,71 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./petition-list.component.scss']
 })
 export class PetitionListComponent implements OnInit {
-
+  posts: any;
   items: string[];
-  posts = [
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-  ];
 
-  constructor() {
+  constructor(private petitionService: PetitionService, private router: Router) {
     this.items = ['All', 'Technology', 'Sports', 'Programming', 'Something', 'Anything'];
 
   }
 
   ngOnInit(): void {
+    this.petitionService.getAllPost()
+      .subscribe(data => {
+        this.posts = data;
+        console.log(this.posts)
+      })
+  }
+
+  readMore(_id: string): void {
+    this.router.navigate(['petition', _id]);
   }
 
 }
