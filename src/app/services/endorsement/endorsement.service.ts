@@ -12,7 +12,7 @@ export class EndorsementService {
   private baseURL = `http://localhost:8080`
 
 
-  getAllPost(): Observable<any> {
+  getAllPost(): Observable<any> { 
     return this.http.get(`${this.baseURL}/public-endorsments/get-endorsements?skip=0&limit=9`)
  }
 

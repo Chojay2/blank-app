@@ -9,6 +9,7 @@ import { EndorsementService } from 'src/app/services/endorsement/endorsement.ser
 export class EndorsementComponent implements OnInit {
   endorsementPosts: any;
   endorsementPost: any;
+  objectLenght: any;
 
   responses = [
     {
@@ -28,13 +29,25 @@ export class EndorsementComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+  
     this.endorsementService.getAllPost()
       .subscribe(data => {
         this.endorsementPosts = data;
-        console.log(this.endorsementPosts)
+        this.objectLenght = Object.keys(this.endorsementPosts).length
+        console.log(this.objectLenght)
       })
 
+      
+      console.log('thimps')
+
+
+      // for(let i = 0; i < this.objectLenght; i++){
+      //   let location=this.endorsementPost[i].users
+      //   console.log(location)
+      //   if(location == "thimphu"){
+      //     console.log('thimps')
+      //   }
+      // }
     let id = "63387bdcba184acd8944f8bb";
 
     this.endorsementService.getAPost(id)
