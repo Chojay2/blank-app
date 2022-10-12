@@ -40,6 +40,29 @@ input[type='checkbox'] {
   color: $dark !important;
 }
 
+.p-rating .p-rating-icon:hover {
+  color: $dark !important;
+}
+
 .p-dialog {
   text-align: center !important;
+}
+
+.p-dialog .p-dialog-header .p-dialog-title {
+  font-size: 30px !important;
+}
+
+.p-dialog {
+  & .p-dialog-header {
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+  }
+  & .p-dialog-content {
+    border-bottom-right-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+  }
+}
+
+.p-progressbar {
+  height: 16px !important;
 }
