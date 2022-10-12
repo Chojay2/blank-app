@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../../services/api.service";
+import { ActivatedRoute, Params } from '@angular/router';
+import { ProfileService } from 'src/app/services/profile/profile.service';
 
 @Component({
   selector: 'app-public-profile',
@@ -7,7 +9,7 @@ import {ApiService} from "../../services/api.service";
   styleUrls: ['./public-profile.component.scss']
 })
 export class PublicProfileComponent implements OnInit {
-
+  id: any;
   items: string[];
   userDetail: any;
   userPost: any;
@@ -41,20 +43,32 @@ export class PublicProfileComponent implements OnInit {
     }
   ];
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private route: ActivatedRoute, private profileService: ProfileService) { }
 
   ngOnInit(): void {
-    this.api.getUser(localStorage.getItem('id') as string).subscribe(val=> {
 
-      this.userDetail = val
-      console.log(this.userDetail)
-    }
-    )
-    this.api.getPost(localStorage.getItem('id') as string).subscribe(value=> {
+    this.id = this.route.snapshot.params['id']
+    console.log(this.id)
+      this.profileService.getAUser(this.id)
+      .subscribe(data => {
+        this.userDetail = data;
+        console.log(this.userDetail)
+      })
+  
+ 
+    // this.api.getUser(localStorage.getItem('id') as string).subscribe(val=> {
 
-        this.userPost = value
-        console.log(this.userPost)
-      }
-    )
+    //   this.userDetail = val
+    //   console.log(this.userDetail)
+    // }
+    // )
+    // this.api.getPost(localStorage.getItem('id') as string).subscribe(value=> {
+
+    //     this.userPost = value
+    //     console.log(this.userPost)
+    //   }
+    // )
   }
+
+
 }

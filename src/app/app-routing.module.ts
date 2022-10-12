@@ -10,6 +10,7 @@ import { BlogPostComponent } from "./screens/blog-post/blog-post.component";
 import { PostEndorsementComponent } from "./screens/post-endorsement/post-endorsement.component";
 import { UploadPetitionComponent } from "./components/upload-petition/upload-petition.component";
 import { BlogCreationComponent } from "./components/blog-creation/blog-creation.component";
+import { PublicProfileComponent } from './components/public-profile/public-profile.component';
 import { PetitionComponent } from './components/petition/petition.component';
 
 const routes: Routes = [
@@ -22,8 +23,9 @@ const routes: Routes = [
   {path: 'create-endorsement', component: PostEndorsementComponent},
   {path: 'create-petition', component: UploadPetitionComponent},
   {path: 'create-post', component: BlogCreationComponent},
-  {path: 'home', component: LandingPageComponent}
-  // {path: '**', redirectTo: 'signin'},
+  {path: 'home', component: LandingPageComponent},
+  {path: 'user/:id', component: PublicProfileComponent},
+  {path: '**', redirectTo: 'home'}
 
 
 ];
