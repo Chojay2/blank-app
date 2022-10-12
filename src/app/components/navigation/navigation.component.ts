@@ -10,7 +10,7 @@ export class NavigationComponent implements OnInit {
   lists: string[];
 
   constructor() {
-    this.lists = ['Home', 'Endorsement', 'Petition'];
+    this.lists = ['Home', 'Endorsement', 'Petition', 'Blog', 'Recommendations'];
   }
 
   ngOnInit(): void {
@@ -20,6 +20,9 @@ export class NavigationComponent implements OnInit {
 
   showModalDialog() {
     this.displayModal = true;
+  }
+  hideModalDialog() {
+    this.displayModal = false;
   }
 
 }
