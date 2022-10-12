@@ -41,16 +41,14 @@
       </div>
         <div>
             <h3>File upload</h3>
-            <div class="dropzone p-8 rounded">
-                <ngx-dropzone class="dropzone__container" (change)="onSelect($event)">
-                    <ngx-dropzone-label fxLayout="row" fxLayoutAlign="center center">
-                        <i class="pi pi-cloud-upload me-16" style="font-size: 40px"></i>
-                        Upload your files here
-                    </ngx-dropzone-label>
-                    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                    </ngx-dropzone-preview>
-                </ngx-dropzone>
+            <div>
+              <input
+                  type="file"
+                  name="file"
+                  class="pi pi-cloud-upload me-16" style="font-size: 40px"
+                  formControlName="file"
+                  (change)="onFileChange($event)"
+              />
             </div>
             <button class="btn-primary mt-38 mb-16">Save and post</button>
         </div>

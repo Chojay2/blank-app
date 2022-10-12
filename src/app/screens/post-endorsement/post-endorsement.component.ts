@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
@@ -11,21 +12,12 @@ export class PostEndorsementComponent implements OnInit {
   endorsementForm = this.fb.group({
     title: ['', Validators.required],
     goal: ['', Validators.required],
-    description: ['', Validators.required]
+    description: ['', Validators.required],
+    file: ['', Validators.required],
+    fileSource: ['', Validators.required]
   });
+
   showValidationErros: boolean = false;
-
-  files: File[] = [];
-
-	onSelect(event) {
-		console.log(event);
-		this.files.push(...event.addedFiles);
-	}
-
-	onRemove(event) {
-		console.log(event);
-		this.files.splice(this.files.indexOf(event), 1);
-	}
 
   checked() {
     const checkBox = document.getElementById("checked") as HTMLInputElement | null;
@@ -47,27 +39,44 @@ export class PostEndorsementComponent implements OnInit {
   //   }
   // }
 
-  constructor(private fb: FormBuilder, private endorsementService: EndorsementService) { }
+  constructor(private fb: FormBuilder, private endorsementService: EndorsementService, private http: HttpClient) { }
 
   ngOnInit(): void {
+  }
+
+  /* get f(){
+    return this.endorsementForm.controls;
+  } */
+
+  onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.endorsementForm.patchValue({
+        fileSource: file
+      });
+      console.log('file', file)
+      console.log('fileSource', this.endorsementForm.get('fileSource'))
+    }
   }
 
   onFormSubmit(form: FormGroup) {
     if (!form.valid) {
      this.showValidationErros = true;
+     console.log('form is invalid');
      return;
     };
     this.showValidationErros = false;
 
-    var body = {
+     const body = {
       title: form.value.title,
       goal: form.value.goal,
-      description: form.value.description
+      description: form.value.description,
+      file: form.value.fileSource
     }
-    this.endorsementService.uploadAPost(body).subscribe(response=>{
-      console.log(response)
-    })
+    this.endorsementService.addGallery(body,body.file).subscribe(val=>console.log(val));
     form.reset();
   }
+
+
 
 }
