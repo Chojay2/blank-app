@@ -20,8 +20,8 @@ const routes: Routes = [
   {path: 'create-endorsement', component: PostEndorsementComponent},
   {path: 'create-petition', component: UploadPetitionComponent},
   {path: 'create-post', component: BlogCreationComponent},
-  {path: 'home', component: LandingPageComponent}
-  // {path: '**', redirectTo: 'signin'},
+  {path: 'home', component: LandingPageComponent},
+  {path: '**', redirectTo: 'home'},
 
 
 ];

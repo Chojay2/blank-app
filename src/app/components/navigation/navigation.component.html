@@ -8,11 +8,64 @@
     <li class="nav__menu rounded--md py-8 px-24">Recommendations</li>
   </ul>
   <div fxLayout="row" fxLayoutGap="30" fxLayoutAlign="center center">
-    <div class="cursor--pointer" fxLayout="row" fxLayoutGap="8" fxLayoutAlign="center center">
+    <div class="cursor--pointer" fxLayout="row" fxLayoutGap="8" fxLayoutAlign="center center"
+    (click)="showProfileDialog()">
       <img src="../../../assets/images/profile.png" alt="profile" width="34" height="34">
       <p>Adam</p>
-      <i class="pi pi-chevron-down" ></i>
     </div>
+    <p-dialog [(visible)]="displayProfile" [modal]="true" [style]="{width: '30vw'}">
+      <div fxLayout fxLayoutAlign="center center" class="login-wrapper">
+        <div class="w-100">
+          <div class="bg--white rounded w-100">
+            <p-tabView>
+              <p-tabPanel header="Profile">
+                <form>
+                  <div class="p-40 rounded">
+                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Name">
+                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Gender">
+                    <input type="email" class="bg-secondary fs-18 w-100 mb-20" placeholder="Email">
+                    <div class="w-100" fxLayout="column" fxLayoutAlign="start start">
+                      <p>Profile image</p>
+                      <div class="w-100" fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start center">
+                        <img src="../../../assets/images/profile.png" alt="profile" width="64" height="64">
+                        <div class="bg-secondary w-100 rounded">
+                          <input type="file">
+                        </div>
+                      </div>
+                    </div>
+                    <button class="w-100 btn-primary my-20">Save public settings</button>
+                  </div>
+                </form>
+              </p-tabPanel>
+              <p-tabPanel header="Bio">
+                <form class="bg--white rounded">
+                  <div class="p-40">
+                    <textarea rows="4" type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Short bio"></textarea>
+                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Website">
+                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Headline for your profile">
+                    <textarea rows="4" type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Why do you support this webiste?"></textarea>
+                    <button class="w-100 btn-primary">Save public settings</button>
+                  </div>
+                </form>
+              </p-tabPanel>
+              <p-tabPanel header="Settings">
+                <form class="bg--white rounded">
+                  <div class="p-40">
+                    <input type="email" class="bg-secondary fs-18 w-100 mb-20" placeholder="Email">
+                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Mobile">
+                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="CID">
+                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Dzongkhag">
+                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Gewog">
+                    <button class="w-100 btn-primary">Save public settings</button>
+                  </div>
+                </form>
+              </p-tabPanel>
+            </p-tabView>
+          </div>
+        </div>
+      </div>
+    </p-dialog>
+
     <p class="cursor--pointer nav__menu rounded--md py-8 px-24" (click)="showModalDialog()">Create Post</p>
     <p-dialog header="Choose Post Type" [(visible)]="displayModal" [modal]="true" [style]="{width: '45vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
       <div class="w-100 py-50 px-20" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="40">

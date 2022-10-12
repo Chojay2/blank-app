@@ -3,7 +3,7 @@
 .nav {
   &__menu {
     transition: 0.2s ease-in-out;
-    &:hover {
+    &:hover, &:focus {
       background-color: $primary;
       color: $white;
     }
@@ -12,4 +12,14 @@
     background-color: $secondary;
     border: 1px solid $primary;
   }
+}
+
+:host ::ng-deep.login-wrapper {
+  li {
+    width: 33.333%;
+  }
+  .p-tabview-nav-link {
+    justify-content: center;
+  }
+
 }
