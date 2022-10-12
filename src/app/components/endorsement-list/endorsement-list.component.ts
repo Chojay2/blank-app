@@ -66,7 +66,7 @@ export class EndorsementListComponent implements OnInit {
   ];
 
   constructor() {
-    this.items = ['All', 'Technology', 'Sports', 'Programming', 'Something', 'Anything'];
+    this.items = ['All', 'Technology', 'Sports', 'Programming'];
 
   }
 

@@ -65,9 +65,9 @@ export class BlogPostComponent implements OnInit {
     },
   ];
 
-  constructor() { 
-    this.items = ['All', 'Technology', 'Sports', 'Programming', 'Something', 'Anything'];
-    
+  constructor() {
+    this.items = ['All', 'Technology', 'Sports', 'Programming'];
+
   }
 
   ngOnInit(): void {

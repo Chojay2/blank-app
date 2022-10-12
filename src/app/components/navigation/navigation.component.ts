@@ -25,4 +25,13 @@ export class NavigationComponent implements OnInit {
     this.displayModal = false;
   }
 
+  displayProfile: boolean;
+
+  showProfileDialog() {
+    this.displayProfile = true;
+  }
+  hideProfileDialog() {
+    this.displayProfile = false;
+  }
+
 }

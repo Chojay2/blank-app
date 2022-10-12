@@ -19,7 +19,56 @@ export class ProfileListComponent implements OnInit {
       description: 'This is the profile bio text. Quisque blandit nunc ats.... ',
       posts: '10 posts',
       views: '2k views'
-    }
+    },
+    {
+      image: '',
+      name: 'Devon Lane',
+      description: 'This is the profile bio text. Quisque blandit nunc ats.... ',
+      posts: '10 posts',
+      views: '2k views'
+    },
+    {
+      image: '',
+      name: 'Devon Lane',
+      description: 'This is the profile bio text. Quisque blandit nunc ats.... ',
+      posts: '10 posts',
+      views: '2k views'
+    },
+    {
+      image: '',
+      name: 'Devon Lane',
+      description: 'This is the profile bio text. Quisque blandit nunc ats.... ',
+      posts: '10 posts',
+      views: '2k views'
+    },
+    {
+      image: '',
+      name: 'Devon Lane',
+      description: 'This is the profile bio text. Quisque blandit nunc ats.... ',
+      posts: '10 posts',
+      views: '2k views'
+    },
+    {
+      image: '',
+      name: 'Devon Lane',
+      description: 'This is the profile bio text. Quisque blandit nunc ats.... ',
+      posts: '10 posts',
+      views: '2k views'
+    },
+    {
+      image: '',
+      name: 'Devon Lane',
+      description: 'This is the profile bio text. Quisque blandit nunc ats.... ',
+      posts: '10 posts',
+      views: '2k views'
+    },
+    {
+      image: '',
+      name: 'Devon Lane',
+      description: 'This is the profile bio text. Quisque blandit nunc ats.... ',
+      posts: '10 posts',
+      views: '2k views'
+    },
   ];
 
 }
