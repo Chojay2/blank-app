@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
 
 @Component({
@@ -73,7 +73,8 @@ export class PostEndorsementComponent implements OnInit {
       description: form.value.description,
       file: form.value.fileSource
     }
-    this.endorsementService.addGallery(body,body.file).subscribe(val=>console.log(val));
+
+    this.endorsementService.addGallery(body, body.file).subscribe(val=>console.log(val));
     form.reset();
   }
 
