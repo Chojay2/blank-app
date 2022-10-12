@@ -34,6 +34,9 @@ import { CalenderComponent } from './screens/calender/calender.component';
 import {GMapModule} from "primeng/gmap";
 import {HttpClientModule} from "@angular/common/http";
 import { AuthContainerComponent } from './components/auth/auth-container/auth-container.component';
+import {CommentComponent} from "./components/comment/comment.component";
+import {DialogModule} from "primeng/dialog";
+import {RatingModule} from "primeng/rating";
 
 @NgModule({
   declarations: [
@@ -55,7 +58,8 @@ import { AuthContainerComponent } from './components/auth/auth-container/auth-co
     EventComponent,
     HostEventComponent,
     CalenderComponent,
-    AuthContainerComponent
+    AuthContainerComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -74,8 +78,10 @@ import { AuthContainerComponent } from './components/auth/auth-container/auth-co
     AvatarGroupModule,
     AvatarModule,
     HttpClientModule,
-    GMapModule
-    ],
+    GMapModule,
+    DialogModule,
+    RatingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
