@@ -1,0 +1,22 @@
+<div class="w-100 my-40">
+  <div class="w-90 mx-auto" fxLayout="row" fxLayoutAlign="space-between center">
+    <h1>Discover Innovators</h1>
+    <span fxLayout="row" fxLayoutAlign="start center">
+      <i class="pi pi-search position--absolute text--black-75 ms-16"></i>
+      <input type="text" class="bg-secondary px-50 rounded--md" placeholder="Search">
+    </span>
+  </div>
+  <div class="w-90 mx-auto" fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="40">
+    <div class="p-28 mt-40 w-20 rounded form" *ngFor="let profile of profiles">
+      <div class="w-100 text--center">
+        <img src="../../../assets/images/profile.png" alt="profile" width="80" height="80">
+      </div>
+      <p class="fw-500 fs-28 text--center">{{profile.name}}</p>
+      <p class="text--black-75">{{profile.description}}</p>
+      <div>
+        <p class="text-primary" fxLayout="row" fxLayoutAlign="start center"><i class="pi pi-file me-16" ></i> {{profile.posts}}</p>
+        <p class="text-primary" fxLayout="row" fxLayoutAlign="start center"><i class="pi pi-eye me-16" ></i> {{profile.views}}</p>
+      </div>
+    </div>
+  </div>
+</div>

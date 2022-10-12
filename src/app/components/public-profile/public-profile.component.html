@@ -35,9 +35,15 @@
         </div>
         <h2 class="fs-28 m-0">{{post.title}}</h2>
         <p class="text-primary fs-20 box--shadow-bottom m-0 pb-20">{{post.description}}</p>
-        <div class="w-100 pb-16 box--shadow-bottom" fxLayout="row" fxLayoutAlign="space-between center">
-          <p-progressBar class="w-70" value="50"></p-progressBar>
-          <p class="fs-14 fw-300 m-0 text-primary">100 Signatures</p>
+        <div class="text-primary" fxLayout="row" fxLayoutAlign="space-between center">
+          <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
+            <i class="pi pi-calendar me-16" ></i>
+            {{post.date}}
+          </p>
+          <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
+            <i class="pi pi-eye me-16" ></i>
+            {{post.views}}
+          </p>
         </div>
         <button class="btn-outline-dark rounded--lg">Read More</button>
       </div>

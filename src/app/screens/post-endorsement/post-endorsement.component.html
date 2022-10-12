@@ -29,10 +29,6 @@
             <input type="checkbox" checked id="checked" (click)="checked()">
             <label>Yes</label>
           </div>
-<!--          <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start center">-->
-<!--            <input type="checkbox" id="unChecked" (click)="unChecked()">-->
-<!--            <label>No</label>-->
-<!--          </div>-->
         </div>
         <div id="partnerForm" class="partner__form my-16" fxLayout="column" fxLayoutGap="16">
           <input type="text" class="w-50 fs-18 bg-secondary border--none rounded p-16" placeholder="Title for the role">
@@ -41,17 +37,9 @@
       </div>
         <div>
             <h3>File upload</h3>
-            <div class="dropzone p-8 rounded">
-                <ngx-dropzone class="dropzone__container" (change)="onSelect($event)">
-                    <ngx-dropzone-label fxLayout="row" fxLayoutAlign="center center">
-                        <i class="pi pi-cloud-upload me-16" style="font-size: 40px"></i>
-                        Upload your files here
-                    </ngx-dropzone-label>
-                    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                    </ngx-dropzone-preview>
-                </ngx-dropzone>
-            </div>
+          <div class="dropzone bg-secondary py-80 rounded text--center" >
+            <input type="file" class="file">
+          </div>
             <button class="btn-primary mt-38 mb-16">Save and post</button>
         </div>
     </form>

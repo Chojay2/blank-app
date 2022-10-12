@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -34,9 +35,17 @@ import { CalenderComponent } from './screens/calender/calender.component';
 import {GMapModule} from "primeng/gmap";
 import {HttpClientModule} from "@angular/common/http";
 import { AuthContainerComponent } from './components/auth/auth-container/auth-container.component';
-import {CommentComponent} from "./components/comment/comment.component";
-import {DialogModule} from "primeng/dialog";
-import {RatingModule} from "primeng/rating";
+
+import { CommentComponent } from "./components/comment/comment.component";
+import { DialogModule } from 'primeng/dialog';
+import { RatingModule } from 'primeng/rating';
+import { ProfileListComponent } from './components/profile-list/profile-list.component';
+import { EndorsementListComponent } from './components/endorsement-list/endorsement-list.component';
+import { PetitionListComponent } from './components/petition-list/petition-list.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { BlogCreationComponent } from './components/blog-creation/blog-creation.component';
+import { ShareComponent } from './components/share/share.component';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +68,14 @@ import {RatingModule} from "primeng/rating";
     HostEventComponent,
     CalenderComponent,
     AuthContainerComponent,
-    CommentComponent
+
+    CommentComponent,
+    ProfileListComponent,
+    EndorsementListComponent,
+    PetitionListComponent,
+    BlogCreationComponent,
+    ShareComponent
+
   ],
   imports: [
     BrowserModule,
@@ -80,8 +96,18 @@ import {RatingModule} from "primeng/rating";
     HttpClientModule,
     GMapModule,
     DialogModule,
-    RatingModule
-  ],
+
+    RatingModule,
+    BrowserAnimationsModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    }) ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
