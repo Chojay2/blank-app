@@ -35,6 +35,7 @@ import { CalenderComponent } from './screens/calender/calender.component';
 import {GMapModule} from "primeng/gmap";
 import {HttpClientModule} from "@angular/common/http";
 import { AuthContainerComponent } from './components/auth/auth-container/auth-container.component';
+
 import { CommentComponent } from "./components/comment/comment.component";
 import { DialogModule } from 'primeng/dialog';
 import { RatingModule } from 'primeng/rating';
@@ -68,13 +69,15 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     HostEventComponent,
     CalenderComponent,
     AuthContainerComponent,
+
     CommentComponent,
     ProfileListComponent,
     EndorsementListComponent,
     PetitionListComponent,
     BlogCreationComponent,
     ShareComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ShareComponent
   ],
   imports: [
     BrowserModule,
@@ -95,6 +98,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     HttpClientModule,
     GMapModule,
     DialogModule,
+
     RatingModule,
     BrowserAnimationsModule,
     NgCircleProgressModule.forRoot({
@@ -105,6 +109,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
     }) ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
