@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
 
+
 @Component({
   selector: 'app-endorsement',
   templateUrl: './endorsement.component.html',
@@ -14,7 +15,7 @@ export class EndorsementComponent implements OnInit {
   responses = [
     {
       name: 'Adam Smith',
-      time: '2 minutes ago', 
+      time: '2 minutes ago',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget luctus tellus. Duis euismod tellus arcu, vitae convallis lectus tincidunt ac. Morbi eros metus, suscipit nec eros id, dictum condimentum nisi.'
     },
     {
@@ -29,7 +30,7 @@ export class EndorsementComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  
+
     this.endorsementService.getAllPost()
       .subscribe(data => {
         this.endorsementPosts = data;
@@ -37,7 +38,7 @@ export class EndorsementComponent implements OnInit {
         console.log(this.objectLenght)
       })
 
-      
+
       console.log('thimps')
 
 
