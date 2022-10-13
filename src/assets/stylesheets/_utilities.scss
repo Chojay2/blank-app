@@ -15,6 +15,7 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     font-weight: 700;
     border-radius: 4px;
     cursor: pointer;
+    text-wrap: none;
     &:hover {
         opacity: 0.9;
     }
@@ -161,6 +162,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &-dark {
       background-color: $dark;
     }
+  &-blue {
+    background-color: $blue;
+  }
 }
 
 .box--shadow-bottom {

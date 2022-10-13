@@ -8,13 +8,16 @@
   </div>
   <div class="w-90 mx-auto">
     <div class="w-100" fxLayout="row wrap" fxLayoutAlign="center">
-      <div class="p-28 card transition mt-40 me-40 w-20 form" *ngFor="let profile of profiles">
+      <div class="p-28 position--relative card transition mt-40 me-40 w-20 form" *ngFor="let profile of profiles">
         <div class="w-100 text--center">
-          <img src="../../../assets/images/profile.png" alt="profile" width="80" height="80">
+          <img src="../../../assets/images/profile.png" class="rounded--circle" alt="profile" width="150" height="150">
+        </div>
+        <div class="text-primary border--primary rounded px-10 py-4 position--absolute follow m-10 transition">
+          <p class="m-0" fxLayout="row" fxLayoutAlign="start center"><i class="pi pi-plus me-16"></i>Follow</p>
         </div>
         <p class="fw-500 fs-28 text--center">{{profile.name}}</p>
-        <p class="text--black-75">{{profile.description}}</p>
-        <div>
+        <p class="text--black-75 text--center">{{profile.description}}</p>
+        <div class="px-20" fxLayout="row" fxLayoutAlign="space-between center">
           <p class="text-primary" fxLayout="row" fxLayoutAlign="start center"><i class="pi pi-file me-16" ></i> {{profile.posts}}</p>
           <p class="text-primary" fxLayout="row" fxLayoutAlign="start center"><i class="pi pi-eye me-16" ></i> {{profile.views}}</p>
         </div>

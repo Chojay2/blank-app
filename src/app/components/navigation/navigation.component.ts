@@ -34,4 +34,13 @@ export class NavigationComponent implements OnInit {
     this.displayProfile = false;
   }
 
+  displayLogin: boolean;
+
+  showLoginDialog() {
+    this.displayLogin = true;
+  }
+  hideLoginDialog() {
+    this.displayLogin = false;
+  }
+
 }

@@ -45,7 +45,9 @@ import { PetitionListComponent } from './components/petition-list/petition-list.
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { BlogCreationComponent } from './components/blog-creation/blog-creation.component';
 import { ShareComponent } from './components/share/share.component';
-import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { AuthComponent } from './components/auth/auth-container/auth/auth.component';
+import { PostCreationComponent } from "./components/post-creation/post-creation.component";
 
 
 @NgModule({
@@ -69,6 +71,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     HostEventComponent,
     CalenderComponent,
     AuthContainerComponent,
+    PostCreationComponent,
 
     CommentComponent,
     ProfileListComponent,
@@ -76,8 +79,9 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     PetitionListComponent,
     BlogCreationComponent,
     ShareComponent,
-    EditProfileComponent,
-    ShareComponent
+    ShareComponent,
+    CategoriesComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
