@@ -10,6 +10,7 @@ import { CommentService } from 'src/app/services/comment/comment.service';
 })
 export class CommentComponent implements OnInit {
   @Input() id: any;
+  @Input() type: string;
 
   commentForm = this.fb.group({
     comment: ['', Validators.required],
@@ -20,7 +21,7 @@ export class CommentComponent implements OnInit {
   constructor(private fb: FormBuilder,  private commentService: CommentService) { }
 
   ngOnInit(): void {
-     
+  console.log(this.type)
   }
 
   onFormSubmit(form: FormGroup) {
@@ -29,7 +30,7 @@ export class CommentComponent implements OnInit {
      return;
     };
     this.showValidationErros = false;
-  
+
 
     console.log(form.value.rating )
     var body = {

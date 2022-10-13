@@ -2,17 +2,9 @@
     <div class="w-70 mx-auto" fxLayout="row" fxLayoutGap="60">
         <div class="w-50">
           <div class="w-100">
-            <h1 class="fs-38">This is the endorsement headline</h1>
-            <p class="fs-24 w-80">This is the intro text. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Aliquam at tempus erat.
-              Vestibulum vehicula malesuada malesuada. Phasellus mattis eu turpis.
-            </p>
-            <p class="w-80 fs-18 text-primary">Quisque blandit nunc at metus maximus, at euismod sem iaculis. Maecenas
-              libero quam, vulputate ut turpis quis, malesuada placerat erat. Class aptent
-              taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-              Nullam consectetur quam nulla, at condimentum leo malesuada in. Integer vestibulum
-              sem nec augue tincidunt, tincidunt accumsan massa ornare.
-            </p>
+            <h1 class="fs-38">{{endorsementPost.title}}</h1>
+            <div class="fs-24 w-80">{{endorsementPost.description}}
+            </div>
           </div>
           <div>
             <h2 class="mt-30">Job Title</h2>
@@ -23,9 +15,7 @@
               Nullam consectetur quam nulla, at condimentum leo malesuada in.
             </p>
           </div>
-            <h1 class="fs-38">{{endorsementPost.title}}</h1>
-            <div class="fs-24 w-80">{{endorsementPost.description}}
-            </div>
+
         </div>
         <div class="w-50 form">
             <div class="p-32 box--shadow-bottom" fxLayout="column" fxLayoutGap="32">
@@ -52,7 +42,7 @@
         </div>
     </div>
     <div class="w-60 mx-auto" fxLayout="column" fxLayoutAlign="center center">
-        <app-comment [id]="endorsementPost._id" class="w-100"></app-comment>
+        <app-comment [id]="endorsementPost._id" [type]= "'endorsement'" class="w-100"></app-comment>
         <div class="w-100 bg-light py-20">
             <div class="w-100 px-60" fxLayout="row" fxLayoutAlign="space-between">
                 <h2 class="fw-500">Recent responses</h2>

@@ -11,6 +11,7 @@ export class EndorsementComponent implements OnInit {
   endorsementPosts: any;
   endorsementPost: any;
   objectLenght: any;
+  postType: any;
 
   responses = [
     {
