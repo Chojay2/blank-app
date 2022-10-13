@@ -12,6 +12,7 @@ import { UploadPetitionComponent } from "./components/upload-petition/upload-pet
 import { BlogCreationComponent } from "./components/blog-creation/blog-creation.component";
 import { PublicProfileComponent } from './components/public-profile/public-profile.component';
 import { PetitionComponent } from './components/petition/petition.component';
+import {PostLocationComponent} from "./components/post-location/post-location.component";
 
 const routes: Routes = [
   {path: 'signin', component: LoginComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'create-post', component: BlogCreationComponent},
   {path: 'home', component: LandingPageComponent},
   {path: 'user/:id', component: PublicProfileComponent},
+  {path: 'post-locations/:location', component: PostLocationComponent},
   {path: '**', redirectTo: 'home'}
 
 

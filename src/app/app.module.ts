@@ -42,10 +42,11 @@ import { RatingModule } from 'primeng/rating';
 import { ProfileListComponent } from './components/profile-list/profile-list.component';
 import { EndorsementListComponent } from './components/endorsement-list/endorsement-list.component';
 import { PetitionListComponent } from './components/petition-list/petition-list.component';
-// import { NgCircleProgressModule } from 'ng-circle-progress';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 import { BlogCreationComponent } from './components/blog-creation/blog-creation.component';
 import { ShareComponent } from './components/share/share.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { PostLocationComponent } from './components/post-location/post-location.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     BlogCreationComponent,
     ShareComponent,
     EditProfileComponent,
-    ShareComponent
+    ShareComponent,
+    PostLocationComponent
   ],
   imports: [
     BrowserModule,
@@ -100,15 +102,15 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     DialogModule,
 
     RatingModule,
-    BrowserAnimationsModule
-    // NgCircleProgressModule.forRoot({
-    //   radius: 100,
-    //   outerStrokeWidth: 16,
-    //   innerStrokeWidth: 8,
-    //   outerStrokeColor: "#78C000",
-    //   innerStrokeColor: "#C7E596",
-    //   animationDuration: 300,
-    // }) 
+    BrowserAnimationsModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ],
 
   providers: [],

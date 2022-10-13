@@ -16,9 +16,12 @@ export class EndorsementService {
     return this.http.get(`${this.baseURL}/public-endorsments/get-endorsements?skip=0&limit=9`)
  }
 
- getAPost(id: any): Observable<any> {
-  return this.http.get(`${this.baseURL}/public-endorsments/get-endorsement?endorsementId=${id}`)
-}
+   getAPost(id: any): Observable<any> {
+    return this.http.get(`${this.baseURL}/public-endorsments/get-endorsement?endorsementId=${id}`)
+  }
+  postByLocation(location: any): Observable<any> {
+    return this.http.get(`${this.baseURL}/public-endorsments/get-endorsements-by-loc?location=${location}&skip=0&limit=9`)
+  }
 
   uploadAPost(data: any): Observable<any> {
   return this.http.post(`${this.baseURL}/endorsments/add-endorsement`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NDk5MTkzfQ.K4XX_II0lJojTOpxypRw0spbg5hgNs5xwfLG7FWqHN0')})

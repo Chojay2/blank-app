@@ -1,4 +1,4 @@
-<!-- <div class="w-100 my-60 bg-secondary">
+<div class="w-100 my-60 bg-secondary">
   <div class="w-90 mx-auto px-40" fxLayout="row" fxLayoutGap="40" fxLayoutAlign="center end">
     <div class="w-60">
       <h1 class="m-0">Dzongkhag Level Insights</h1>
@@ -136,7 +136,9 @@
           <p class="text-primary">Reach</p>
         </div>
       </div>
-      <button class="btn-dark rounded--lg w-100">See Posts</button>
+      <a [routerLink]="['/post-locations', anchorValue]">
+        <button class="btn-dark rounded--lg w-100">See Posts</button>
+      </a>
     </div>
   </div>
-</div> -->
+</div>
