@@ -3,16 +3,61 @@
     <div class="form w-50 py-30 px-100" fxLayout="column" fxLayoutGap="10" fxLayoutAlign="center center">
       <img src="{{userDetail.profile}}" alt="profile" width="100" height="100">
       <p class="fs-28 fw-500 m-0">{{userDetail.name}}</p>
-<!--      <p class="bg-black text-white fs-14 m-0 rounded&#45;&#45;lg p-8">5SC</p>-->
-<!--      <p class="bg-black text-white fs-14 mb-20 rounded&#45;&#45;lg p-8">Gold member</p>-->
-<!--      <div fxLayout="row" fxLayoutGap="30" fxLayoutAlign="center center">-->
-<!--        <i class="pi pi-globe cursor&#45;&#45;pointer" style="font-size: 26px"></i>-->
-<!--        <i class="pi pi-twitter cursor&#45;&#45;pointer" style="font-size: 26px"></i>-->
-<!--        <i class="pi pi-facebook cursor&#45;&#45;pointer" style="font-size: 26px"></i>-->
-<!--      </div>-->
       <p class="text-primary fs-20">{{userDetail.bio}} </p>
       <p class="text-primary fs-20">{{userDetail.contact}} </p>
-      <a class="text--violet fs-28 fw-700 cursor--pointer my-20">Edit your profile</a>
+      <p class="text--violet fs-28 fw-700 cursor--pointer my-20" (click)="showProfileDialog()">Edit your profile</p>
+      <p-dialog header="Your Profile" [(visible)]="displayProfile" [modal]="true" [style]="{width: '30vw'}" [draggable]="false" [resizable]="false">
+        <div fxLayout fxLayoutAlign="center center" class="login-wrapper">
+          <div class="w-100">
+            <div class="bg--white rounded w-100">
+              <p-tabView>
+                <p-tabPanel header="Profile">
+                  <form>
+                    <div class="p-40 rounded">
+                      <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Name">
+                      <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Gender">
+                      <input type="email" class="bg-secondary fs-18 w-100 mb-20" placeholder="Email">
+                      <div class="w-100" fxLayout="column" fxLayoutAlign="start start">
+                        <p>Profile image</p>
+                        <div class="w-100" fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start center">
+                          <img src="../../../assets/images/profile.png" alt="profile" width="64" height="64">
+                          <div class="bg-secondary w-100 rounded">
+                            <input type="file">
+                          </div>
+                        </div>
+                      </div>
+                      <button class="w-100 btn-primary my-20">Save public settings</button>
+                    </div>
+                  </form>
+                </p-tabPanel>
+                <p-tabPanel header="Bio">
+                  <form class="bg--white rounded">
+                    <div class="p-40">
+                      <textarea rows="4" type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Short bio"></textarea>
+                      <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Website">
+                      <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Headline for your profile">
+                      <textarea rows="4" type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Why do you support this webiste?"></textarea>
+                      <button class="w-100 btn-primary">Save public settings</button>
+                    </div>
+                  </form>
+                </p-tabPanel>
+                <p-tabPanel header="Settings">
+                  <form class="bg--white rounded">
+                    <div class="p-40">
+                      <input type="email" class="bg-secondary fs-18 w-100 mb-20" placeholder="Email">
+                      <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Mobile">
+                      <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="CID">
+                      <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Dzongkhag">
+                      <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Gewog">
+                      <button class="w-100 btn-primary">Save public settings</button>
+                    </div>
+                  </form>
+                </p-tabPanel>
+              </p-tabView>
+            </div>
+          </div>
+        </div>
+      </p-dialog>
     </div>
     <div class="w-50">
       <h1>Profile headline</h1>
