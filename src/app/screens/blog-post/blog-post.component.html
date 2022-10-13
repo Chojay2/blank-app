@@ -56,7 +56,7 @@
                   {{post.views}}
                 </p>
               </div>
-              <button class="btn-outline-dark rounded--lg">Read More</button>
+              <button class="btn-outline-dark rounded--lg" (click)="readMore(post._id)">Read More</button>
             </div>
         </div>
         <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>

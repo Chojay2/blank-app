@@ -2,7 +2,7 @@
   <div class="w-100 bg-dark text-white py-60">
     <div class="w-70 mx-auto" fxLayout="row" fxLayoutAlign="space-between center">
       <div class="w-40">
-        <p class="my-20 fs-56 fw-700">This is the blog title</p>
+        <p class="my-20 fs-56 fw-700">{{blogPost.title}}</p>
         <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start">
           <img src="../../../assets/images/profile.png" alt="profile" width="50" height="50">
           <div fxLayout="column">
@@ -38,7 +38,7 @@
           <p class="text-primary cursor--pointer">+ Follow reactions</p>
         </div>
         <div fxLayout="column" fxLayoutGap="16">
-          <div class="rounded bg-white border--primary" *ngFor="let response of responses">
+          <div class="rounded bg-white border--primary" *ngFor="let response of blogPost">
             <div class="p-20 box--shadow-bottom" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center">
               <img src="../../../assets//images/profile.png" alt="Profile picture"
                    width="50" height="50">

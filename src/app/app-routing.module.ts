@@ -15,6 +15,8 @@ import { AuthComponent } from "./components/auth/auth-container/auth/auth.compon
 import { PublicProfileComponent } from './components/public-profile/public-profile.component';
 import { PetitionComponent } from './components/petition/petition.component';
 import {PostLocationComponent} from "./components/post-location/post-location.component";
+import { EndorsementComponent } from './screens/endorsement/endorsement.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path: 'petition', component: PetitionListComponent},
   {path: 'petition/:id', component: PetitionComponent},
   {path: 'endorsement', component: EndorsementListComponent},
+  {path: 'endorsement/:id', component: EndorsementComponent},
   {path: 'blog', component: BlogPostComponent},
+  {path: 'blog/:id', component: BlogComponent},
   {path: 'create-endorsement', component: PostEndorsementComponent},
   {path: 'create-petition', component: UploadPetitionComponent},
   {path: 'create-post', component: BlogCreationComponent},

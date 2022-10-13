@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {EndorsementService} from "../../services/endorsement/endorsement.service";
 
 @Component({
@@ -7,72 +8,24 @@ import {EndorsementService} from "../../services/endorsement/endorsement.service
   styleUrls: ['./endorsement-list.component.scss']
 })
 export class EndorsementListComponent implements OnInit {
-
+  posts: any;
   items: string[];
-  posts = [
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-  ];
 
-  constructor( ) {
-    this.items = ['All', 'Technology', 'Sports', 'Programming'];
-
+  constructor(private endoresementService: EndorsementService, private router: Router) {
+    this.items = ['All', 'Technology', 'Sports', 'Programming', 'Something', 'Anything'];
 
   }
 
   ngOnInit(): void {
+    this.endoresementService.getAllPost()
+      .subscribe(data => {
+        this.posts = data;
+        console.log(this.posts)
+      })
+  }
+
+  readMore(_id: string): void {
+    this.router.navigate(['endorsement', _id]);
   }
 
 }

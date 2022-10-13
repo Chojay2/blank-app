@@ -1,9 +1,8 @@
 <div class="endorsement w-100 my-30" fxLayout="column" fxLayoutGap="60">
     <div class="w-70 mx-auto" fxLayout="row" fxLayoutGap="60">
         <div class="w-50">
-          <div class="w-100">
-            <h1 class="fs-38">{{endorsementPost.title}}</h1>
-            <div class="fs-24 w-80">{{endorsementPost.description}}
+            <h1 class="fs-38">{{endoresement.title}}</h1>
+            <div class="fs-24 w-80">{{endoresement.description}}
             </div>
           </div>
           <div>
@@ -49,7 +48,7 @@
                 <p class="text-primary cursor--pointer">See all</p>
             </div>
             <div class="w-100 px-60" fxLayout="column" fxLayoutGap="20">
-                <div class="border--primary rounded bg-white" *ngFor="let response of responses">
+                <div class="border--primary rounded bg-white" *ngFor="let response of endoresement">
                     <div class="p-20 box--shadow-bottom" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center">
                         <img src="../../../assets//images/profile.png" alt="Profile picture"
                         width="50" height="50">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
 
 
@@ -8,7 +9,7 @@ import { EndorsementService } from 'src/app/services/endorsement/endorsement.ser
   styleUrls: ['./endorsement.component.scss']
 })
 export class EndorsementComponent implements OnInit {
-  endorsementPosts: any;
+  /* endorsementPosts: any;
   endorsementPost: any;
   objectLenght: any;
   postType: any;
@@ -57,6 +58,26 @@ export class EndorsementComponent implements OnInit {
         this.endorsementPost = data;
         console.log(this.endorsementPost)
       })
+  } */
+
+  id: string = '';
+  endoresement: any;
+  endorsementPosts: any;
+  endorsementPost: any;
+
+  constructor(private endorsementService: EndorsementService, private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id)
+    this.endorsementDetail();
+  }
+
+  endorsementDetail(): void{
+    this.endorsementService.getAPost(this.id).subscribe(endoresement => {
+      this.endoresement = endoresement;
+      console.log(this.endoresement)
+    });
   }
 
 }
