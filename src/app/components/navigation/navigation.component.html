@@ -5,7 +5,7 @@
     <li class="nav__menu py-12 px-16" routerLink="/endorsement">Endorsements</li>
     <li class="nav__menu py-12 px-16" routerLink="/petition">Petitions</li>
     <li class="nav__menu py-12 px-16" routerLink="/blog">Blogs</li>
-    <li class="nav__menu py-12 px-16" routerLink="/profiles">People</li>
+    <li class="nav__menu py-12 px-16" routerLink="/people">People</li>
   </ul>
   <div fxLayout="row" fxLayoutGap="30" fxLayoutAlign="center center">
     <p class="nav__menu cursor--pointer py-12" (click)="showModalDialog()">Create Post</p>
@@ -32,62 +32,9 @@
     <p-dialog header="" [(visible)]="displayLogin" [modal]="true" [style]="{width: '30vw'}" [draggable]="false" [resizable]="false">
       <app-auth></app-auth>
     </p-dialog>
-    <div class="cursor--pointer" fxLayout="row" fxLayoutGap="8" fxLayoutAlign="center center"
-    (click)="showProfileDialog()">
+    <div class="cursor--pointer" fxLayout="row" fxLayoutGap="8" fxLayoutAlign="center center" routerLink="/user/:id">
       <img src="../../../assets/images/profile.png" alt="profile" width="34" height="34">
       <p>Adam</p>
     </div>
-    <p-dialog header="Your Profile" [(visible)]="displayProfile" [modal]="true" [style]="{width: '30vw'}" [draggable]="false" [resizable]="false">
-      <div fxLayout fxLayoutAlign="center center" class="login-wrapper">
-        <div class="w-100">
-          <div class="bg--white rounded w-100">
-            <p-tabView>
-              <p-tabPanel header="Profile">
-                <form>
-                  <div class="p-40 rounded">
-                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Name">
-                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Gender">
-                    <input type="email" class="bg-secondary fs-18 w-100 mb-20" placeholder="Email">
-                    <div class="w-100" fxLayout="column" fxLayoutAlign="start start">
-                      <p>Profile image</p>
-                      <div class="w-100" fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start center">
-                        <img src="../../../assets/images/profile.png" alt="profile" width="64" height="64">
-                        <div class="bg-secondary w-100 rounded">
-                          <input type="file">
-                        </div>
-                      </div>
-                    </div>
-                    <button class="w-100 btn-primary my-20">Save public settings</button>
-                  </div>
-                </form>
-              </p-tabPanel>
-              <p-tabPanel header="Bio">
-                <form class="bg--white rounded">
-                  <div class="p-40">
-                    <textarea rows="4" type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Short bio"></textarea>
-                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Website">
-                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Headline for your profile">
-                    <textarea rows="4" type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Why do you support this webiste?"></textarea>
-                    <button class="w-100 btn-primary">Save public settings</button>
-                  </div>
-                </form>
-              </p-tabPanel>
-              <p-tabPanel header="Settings">
-                <form class="bg--white rounded">
-                  <div class="p-40">
-                    <input type="email" class="bg-secondary fs-18 w-100 mb-20" placeholder="Email">
-                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Mobile">
-                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="CID">
-                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Dzongkhag">
-                    <input type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Gewog">
-                    <button class="w-100 btn-primary">Save public settings</button>
-                  </div>
-                </form>
-              </p-tabPanel>
-            </p-tabView>
-          </div>
-        </div>
-      </div>
-    </p-dialog>
   </div>
 </nav>
