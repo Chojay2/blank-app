@@ -48,6 +48,8 @@ import { ShareComponent } from './components/share/share.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AuthComponent } from './components/auth/auth-container/auth/auth.component';
 import { PostCreationComponent } from "./components/post-creation/post-creation.component";
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { PostLocationComponent } from './components/post-location/post-location.component';
 
 
 @NgModule({
@@ -78,10 +80,12 @@ import { PostCreationComponent } from "./components/post-creation/post-creation.
     EndorsementListComponent,
     PetitionListComponent,
     BlogCreationComponent,
-    ShareComponent,
-    ShareComponent,
     CategoriesComponent,
-    AuthComponent
+    AuthComponent,
+    EditProfileComponent,
+    ShareComponent,
+    PostLocationComponent
+
   ],
   imports: [
     BrowserModule,
@@ -112,7 +116,8 @@ import { PostCreationComponent } from "./components/post-creation/post-creation.
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
-    }) ],
+    })
+  ],
 
   providers: [],
   bootstrap: [AppComponent]

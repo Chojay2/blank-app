@@ -136,7 +136,9 @@
           <p class="text-primary">Reach</p>
         </div>
       </div>
-      <button class="btn-dark rounded--lg w-100">See Posts</button>
+      <a [routerLink]="['/post-locations', anchorValue]">
+        <button class="btn-dark rounded--lg w-100">See Posts</button>
+      </a>
     </div>
   </div>
 </div>

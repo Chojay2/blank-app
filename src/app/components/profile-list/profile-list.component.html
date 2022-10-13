@@ -18,6 +18,17 @@
         <p class="fw-500 fs-28 text--center">{{profile.name}}</p>
         <p class="text--black-75 text--center">{{profile.description}}</p>
         <div class="px-20" fxLayout="row" fxLayoutAlign="space-between center">
+<div class="w-90 mx-auto">
+  <div class="w-100" fxLayout="row wrap" fxLayoutAlign="center">
+    <div class="p-28 card transition mt-40 me-40 w-20 form"*ngFor="let profile of userProfiles">
+      <div>
+        <a [routerLink]="['/user', profile._id]">asdasd</a>
+        <div class="w-100 text--center">
+          <img src="{{profile.profile}}" alt="profile" width="80" height="80">
+        </div>
+        <p class="fw-500 fs-28 text--center">{{profile.name}}</p>
+        <p class="text--black-75">{{profile.bio}}</p>
+        <div>
           <p class="text-primary" fxLayout="row" fxLayoutAlign="start center"><i class="pi pi-file me-16" ></i> {{profile.posts}}</p>
           <p class="text-primary" fxLayout="row" fxLayoutAlign="start center"><i class="pi pi-eye me-16" ></i> {{profile.views}}</p>
         </div>

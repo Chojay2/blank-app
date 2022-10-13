@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EndorsementService} from "../../services/endorsement/endorsement.service";
 
 @Component({
   selector: 'app-endorsement-list',
@@ -65,8 +66,9 @@ export class EndorsementListComponent implements OnInit {
     },
   ];
 
-  constructor() {
+  constructor( ) {
     this.items = ['All', 'Technology', 'Sports', 'Programming'];
+
 
   }
 
