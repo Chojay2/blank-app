@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'create-petition', component: UploadPetitionComponent},
   {path: 'create-post', component: BlogCreationComponent},
   {path: 'home', component: LandingPageComponent},
-  {path: 'profiles', component: ProfileListComponent},
+  {path: 'people', component: ProfileListComponent},
   {path: 'login', component: AuthComponent},
   {path: 'user/:id', component: PublicProfileComponent},
   {path: 'post-locations/:location', component: PostLocationComponent},

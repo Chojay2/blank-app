@@ -2,25 +2,15 @@
     <div class="w-70 mx-auto" fxLayout="row" fxLayoutGap="60">
         <div class="w-50">
           <div class="w-100">
-            <h1 class="fs-38">This is the endorsement headline</h1>
-            <p class="fs-24 w-80">This is the intro text. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Aliquam at tempus erat.
-              Vestibulum vehicula malesuada malesuada. Phasellus mattis eu turpis.
-            </p>
-            <p class="w-80 fs-18 text-primary">Quisque blandit nunc at metus maximus, at euismod sem iaculis. Maecenas
-              libero quam, vulputate ut turpis quis, malesuada placerat erat. Class aptent
-              taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-              Nullam consectetur quam nulla, at condimentum leo malesuada in. Integer vestibulum
-              sem nec augue tincidunt, tincidunt accumsan massa ornare.
-            </p>
+            <h1 class="fs-38">{{endorsementPost.title}}</h1>
+            <div class="fs-24 w-80">{{endorsementPost.description}}
+            </div>
           </div>
-          <div>
-            <h2 class="mt-30">Job Title</h2>
-            <p class="fw-600 fs-20 my-0">Description:</p>
-            <p class="w-80 fs-18 text-primary my-0">Quisque blandit nunc at metus maximus, at euismod sem iaculis. Maecenas
-              libero quam, vulputate ut turpis quis, malesuada placerat erat. Class aptent
-              taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-              Nullam consectetur quam nulla, at condimentum leo malesuada in.
+          <div class="border rounded--md p-20 text--center w-40">
+            <i class="pi pi-briefcase" style="font-size: 40px"></i>
+            <h2 class="mt-30 my-0">Job Title</h2>
+            <p class="fs-18 text-primary my-0">Quisque blandit nunc at metus maximus, at euismod sem iaculis. Maecenas
+              libero quam, vulputate ut turpis quis, malesuada placerat erat.
             </p>
           </div>
             <h1 class="fs-38">{{endorsementPost.title}}</h1>
@@ -32,15 +22,15 @@
                 <p class="fs-24 fw-600 m-0">300 endorsed so far. Help us get to 600!</p>
                 <p-progressBar value="50"></p-progressBar>
             </div>
-            <form action="" class="p-32" fxLayout="column" fxLayoutGap="32">
+            <form action="" class="p-32 w-100" fxLayout="column" fxLayoutGap="32">
                 <p class="fs-28 fw-600 m-0">Thank you for signing</p>
-                <input id="float-input" class="fs-18 bg-secondary" type="text" placeholder="Your Email">
-                <textarea cols="30" rows="5" class="fs-18 bg-secondary" placeholder="This is the comment"></textarea>
+                <input id="float-input" class="fs-18 bg-secondary w-100 my-16" type="text" placeholder="Your Email">
+                <textarea cols="30" rows="5" class="fs-18 bg-secondary w-100" placeholder="This is the comment"></textarea>
                 <button class="btn-primary">Support this post</button>
             </form>
             <div class="px-32 py-16 mb-10 bg-light">
                 <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="16">
-                    <img src="../../../assets//images//profile.png" alt="Profile picture"
+                    <img src="../../../assets/images/profile.png" alt="Profile picture"
                     width="40" height="40" *ngFor="let number of [0,1,2,3,4,5,6,7,8,9]"
                     class="cursor--pointer">
                 </div>

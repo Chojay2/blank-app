@@ -9,6 +9,7 @@ import { ProfileService } from 'src/app/services/profile/profile.service';
   styleUrls: ['./public-profile.component.scss']
 })
 export class PublicProfileComponent implements OnInit {
+
   id: any;
   items: string[];
   userDetail: any;
@@ -54,21 +55,13 @@ export class PublicProfileComponent implements OnInit {
         this.userDetail = data;
         console.log(this.userDetail)
       })
-  
- 
-    // this.api.getUser(localStorage.getItem('id') as string).subscribe(val=> {
-
-    //   this.userDetail = val
-    //   console.log(this.userDetail)
-    // }
-    // )
-    // this.api.getPost(localStorage.getItem('id') as string).subscribe(value=> {
-
-    //     this.userPost = value
-    //     console.log(this.userPost)
-    //   }
-    // )
   }
+  displayProfile: boolean;
 
-
+  showProfileDialog() {
+    this.displayProfile = true;
+  }
+  hideProfileDialog() {
+    this.displayProfile = false;
+  }
 }
