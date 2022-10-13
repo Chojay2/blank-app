@@ -33,30 +33,43 @@ export class CommentComponent implements OnInit {
 
 
     console.log(form.value.rating )
-    var body = {
+    var endorsementBody = {
       endorsementId: this.id,
       comment: form.value.comment,
       rating: form.value.rating
     }
+    var petitionBody = {
+      petitionId: this.id,
+      comment: form.value.comment,
+      rating: form.value.rating
+    }
+    var postBody = {
+      petitionId: this.id,
+      comment: form.value.comment,
+      rating: form.value.rating
+    }
+
     switch (this.type) {
-      case "endorsement":
-        this.commentService.commentEndorsement(body).subscribe(response=>{
+      case "endorsement": {
+        this.commentService.commentEndorsement(endorsementBody).subscribe(response => {
           console.log(response)
         })
         break;
+      }
 
-      case "petition":
-        this.commentService.commentEndorsement(body).subscribe(response=>{
+      case "petition": {
+        this.commentService.commentPetition(petitionBody).subscribe(response => {
           console.log(response)
         })
         break;
+      }
 
-      case "blog":
-        this.commentService.commentEndorsement(body).subscribe(response=>{
+      case "blog": {
+        this.commentService.commentPost(postBody).subscribe(response => {
           console.log(response)
         })
         break;
-
+      }
 
     }
     form.reset();

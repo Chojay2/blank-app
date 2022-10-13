@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PetitionService } from 'src/app/services/petition/petition.service';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+
 
 @Component({
   selector: 'app-petition',
@@ -12,7 +14,17 @@ export class PetitionComponent implements OnInit {
   petition: any;
   petitions: any;
 
-  constructor(private petitionService: PetitionService, private route: ActivatedRoute) { }
+  signatureForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', Validators.required],
+    address: ['', Validators.required],
+    comments: ['', Validators.required],
+  });
+
+  showValidationErros: boolean = false;
+
+
+  constructor(private petitionService: PetitionService, private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -25,6 +37,27 @@ export class PetitionComponent implements OnInit {
       this.petition = petition;
       console.log(this.petition)
     });
+  }
+
+  onFormSubmit(form: FormGroup) {
+    if (!form.valid) {
+      this.showValidationErros = true;
+      console.log('form is invalid');
+      return;
+    };
+    this.showValidationErros = false;
+
+    const body = {
+      comments: form.value.comments,
+      email: form.value.email,
+      name: form.value.name,
+      address: form.value.address,
+      petitionId: this.petition._id
+    }
+  console.log(body)
+
+    this.petitionService.postSignature(body).subscribe(val=>console.log(val));
+    form.reset();
   }
 
 }
