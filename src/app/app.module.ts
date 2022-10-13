@@ -46,6 +46,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { BlogCreationComponent } from './components/blog-creation/blog-creation.component';
 import { ShareComponent } from './components/share/share.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { PostLocationComponent } from './components/post-location/post-location.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     BlogCreationComponent,
     ShareComponent,
     EditProfileComponent,
-    ShareComponent
+    ShareComponent,
+    PostLocationComponent
   ],
   imports: [
     BrowserModule,
@@ -108,7 +110,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
-    }) ],
+    })
+  ],
 
   providers: [],
   bootstrap: [AppComponent]

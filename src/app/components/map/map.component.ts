@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-map',
@@ -13,8 +14,17 @@ export class MapComponent implements OnInit {
   toggle(button) {
     this.anchorValue = button.id;
  }
-    constructor() { }
+    constructor(private router: Router) {
+
+     }
 
   ngOnInit(): void {
+  }
+
+  seePosts(): void {
+    console.log("thimphu")
+    this.router.navigate(['post-locations', this.anchorValue]);
+    console.log("thimphu")
+
   }
 }
