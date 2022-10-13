@@ -116,6 +116,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &--10 {
         border: 10px solid $black;
     }
+  &--6 {
+    border: 6px solid $black;
+  }
     &--none {
       border: 0;
     }
