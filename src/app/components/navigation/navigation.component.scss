@@ -1,25 +1,18 @@
 @import "../../../assets/stylesheets/_variables.scss";
 
 .nav {
+  background-color: #F1EEE9;
   &__menu {
     transition: 0.2s ease-in-out;
+    border: 0;
     &:hover, &:focus {
-      background-color: $primary;
-      color: $white;
+      box-shadow: 1px -71px 0px -67px rgba(48,48,48,1) inset;
+      -webkit-box-shadow: 1px -71px 0px -67px rgba(48,48,48,1) inset;
+      -moz-box-shadow: 1px -71px 0px -67px rgba(48,48,48,1) inset;
     }
   }
   .cards:hover {
     background-color: $secondary;
     border: 1px solid $primary;
   }
-}
-
-:host ::ng-deep.login-wrapper {
-  li {
-    width: 33.333%;
-  }
-  .p-tabview-nav-link {
-    justify-content: center;
-  }
-
 }

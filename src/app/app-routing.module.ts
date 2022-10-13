@@ -10,9 +10,12 @@ import { BlogPostComponent } from "./screens/blog-post/blog-post.component";
 import { PostEndorsementComponent } from "./screens/post-endorsement/post-endorsement.component";
 import { UploadPetitionComponent } from "./components/upload-petition/upload-petition.component";
 import { BlogCreationComponent } from "./components/blog-creation/blog-creation.component";
+import { ProfileListComponent } from "./components/profile-list/profile-list.component";
+import { AuthComponent } from "./components/auth/auth-container/auth/auth.component";
 import { PublicProfileComponent } from './components/public-profile/public-profile.component';
 import { PetitionComponent } from './components/petition/petition.component';
 import {PostLocationComponent} from "./components/post-location/post-location.component";
+
 
 const routes: Routes = [
   {path: 'signin', component: LoginComponent},
@@ -25,9 +28,12 @@ const routes: Routes = [
   {path: 'create-petition', component: UploadPetitionComponent},
   {path: 'create-post', component: BlogCreationComponent},
   {path: 'home', component: LandingPageComponent},
+  {path: 'profiles', component: ProfileListComponent},
+  {path: 'login', component: AuthComponent},
   {path: 'user/:id', component: PublicProfileComponent},
   {path: 'post-locations/:location', component: PostLocationComponent},
   {path: '**', redirectTo: 'home'}
+
 
 
 ];
