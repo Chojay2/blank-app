@@ -38,9 +38,27 @@ export class CommentComponent implements OnInit {
       comment: form.value.comment,
       rating: form.value.rating
     }
-    this.commentService.commentEndorsement(body).subscribe(response=>{
-      console.log(response)
-    })
+    switch (this.type) {
+      case "endorsement":
+        this.commentService.commentEndorsement(body).subscribe(response=>{
+          console.log(response)
+        })
+        break;
+
+      case "petition":
+        this.commentService.commentEndorsement(body).subscribe(response=>{
+          console.log(response)
+        })
+        break;
+
+      case "blog":
+        this.commentService.commentEndorsement(body).subscribe(response=>{
+          console.log(response)
+        })
+        break;
+
+
+    }
     form.reset();
   }
 
