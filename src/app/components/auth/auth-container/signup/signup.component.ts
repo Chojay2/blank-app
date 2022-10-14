@@ -27,6 +27,6 @@ export class SignupComponent implements OnInit {
 
   signUp(): void {
     const {repeatPassword, ...rest} = this.signUpForm.value
-    this.auth.signup(rest).subscribe(value => console.log(value))
+   // this.auth.signup(rest).subscribe(value => console.log(value))
   }
 }
