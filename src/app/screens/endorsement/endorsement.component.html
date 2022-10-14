@@ -17,13 +17,13 @@
         </div>
         <div class="w-50 form">
             <div class="p-32 box--shadow-bottom" fxLayout="column" fxLayoutGap="32">
-                <p class="fs-24 fw-600 m-0">300 endorsed so far. Help us get to {{endoresement.goal}}</p>
+                <p class="fs-24 fw-600 m-0">{{endoresement.endorse.length}} endorsed so far. Help us get to {{endoresement.goal}}</p>
                 <p-progressBar value="50"></p-progressBar>
             </div>
-            <form action="" class="p-32 w-100" fxLayout="column" fxLayoutGap="32">
+            <form [formGroup]="signatureForm" (submit)="onFormSubmit(signatureForm)" action="" class="p-32 w-100" fxLayout="column" fxLayoutGap="32">
                 <p class="fs-28 fw-600 m-0">Thank you for signing</p>
-                <input id="float-input" class="fs-18 bg-secondary w-100 my-16" type="text" placeholder="Your Email">
-                <textarea cols="30" rows="5" class="fs-18 bg-secondary w-100" placeholder="This is the comment"></textarea>
+                <input id="float-input" class="fs-18 bg-secondary w-100 my-16" type="text" formControlName="email" placeholder="Your Email">
+                <textarea cols="30" rows="5" class="fs-18 bg-secondary w-100" formControlName="comment" placeholder="This is the comment"></textarea>
                 <button class="btn-primary">Support this post</button>
             </form>
             <div class="px-32 py-16 mb-10 bg-light">

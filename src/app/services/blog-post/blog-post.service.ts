@@ -19,9 +19,15 @@ export class BlogPostService {
  getAPost(id: any): Observable<any> {
   return this.http.get(`${this.baseURL}/public-posts/get-post?endorsementId=${id}`)
 }
+  postCount(location: any): Observable<any> {
+    return this.http.get(`${this.baseURL}/public-posts/get-posts-count?location=${location}`)
+  }
 
+  postByLocation(location: any): Observable<any> {
+    return this.http.get(`${this.baseURL}/public-posts/get-posts-by-loc?location=${location}&skip=0&limit=9`)
+  }
   uploadAPost(data: any): Observable<any> {
-  return this.http.post(`${this.baseURL}/posts/add-post`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NDk5MTkzfQ.K4XX_II0lJojTOpxypRw0spbg5hgNs5xwfLG7FWqHN0')})
+  return this.http.post(`${this.baseURL}/posts/add-post`, data, {headers: new HttpHeaders().set('Authorization', `${localStorage.getItem("token")}`)})
   }
 
   updateData(data: any, id: string): Observable<any> {
@@ -29,7 +35,7 @@ export class BlogPostService {
   }
 
   deleteData(id: any): Observable<any> {
-    return this.http.post(`${this.baseURL}/delete-post`, id)
+    return this.http.post(`${this.baseURL}/delete-post`, id, {headers: new HttpHeaders().set('Authorization', `${localStorage.getItem("token")}`)})
 }
 
   addGallery(data: any, file: File): Observable<any> {
@@ -38,7 +44,7 @@ export class BlogPostService {
     formData.append('title', data.title);
     formData.append('goal', data.goal);
     formData.append('description', data.description);
-    const header = new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NDg0NjM4fQ.WLCIKyLcnSfm1nyPotqH3VwbBmayyXFJidXsWJYyPc0');
+    const header = new HttpHeaders().set('Authorization', `${localStorage.getItem("token")}`);
     const params = new HttpParams();
 
     const options = {
