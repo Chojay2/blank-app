@@ -31,7 +31,7 @@
                   <i class="pi pi-heart-fill" style="font-size: 24px"></i>
                 </div>
                 <h2 class="fs-28 m-0">{{post.title}}</h2>
-                <p class="text-primary fs-20 box--shadow-bottom m-0 pb-20">{{post.description}}</p>
+                <div class="text-primary elipses fs-20 box--shadow-bottom m-0 pb-20" [innerHTML]="post.description"></div>
                 <div class="text-primary" fxLayout="row" fxLayoutAlign="space-between center">
                   <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
                     <i class="pi pi-calendar me-16" ></i>
