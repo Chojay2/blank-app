@@ -48,8 +48,11 @@ import { ShareComponent } from './components/share/share.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AuthComponent } from './components/auth/auth-container/auth/auth.component';
 import { PostCreationComponent } from "./components/post-creation/post-creation.component";
+import { TableModule } from 'primeng/table';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { PostLocationComponent } from './components/post-location/post-location.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
 @NgModule({
@@ -84,7 +87,9 @@ import { PostLocationComponent } from './components/post-location/post-location.
     AuthComponent,
     // EditProfileComponent,
     ShareComponent,
-    PostLocationComponent
+    PostLocationComponent,
+    AdminDashboardComponent,
+    ChatBotComponent
 
   ],
   imports: [
@@ -106,6 +111,7 @@ import { PostLocationComponent } from './components/post-location/post-location.
     HttpClientModule,
     GMapModule,
     DialogModule,
+    TableModule,
 
     RatingModule,
     BrowserAnimationsModule,
