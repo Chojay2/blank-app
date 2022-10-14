@@ -53,6 +53,7 @@ import { TableModule } from 'primeng/table';
 import { PostLocationComponent } from './components/post-location/post-location.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
+import {ChartModule} from "primeng/chart";
 
 
 @NgModule({
@@ -122,7 +123,8 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
-    })
+    }),
+    ChartModule
   ],
 
   providers: [],

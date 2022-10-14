@@ -1,19 +1,20 @@
 <div class="w-100" fxLayout="row" >
-  <nav class="w-20 border--secondary">
+  <nav fxLayout="column" fxLayoutAlign="start" class="w-15 border--secondary side-nav">
     <div class="ms-30 py-20">
-      <img src="../../assets/images/logo.svg" alt="">
+      <img src="../../assets/images/logo.svg" alt="" width="80">
     </div>
-    <ul fxLayout="column">
-      <li class="admin__nav p-14 w-100">Overview</li>
-      <li class="admin__nav p-14 w-100">Blogs</li>
-      <li class="admin__nav p-14 w-100">Endorsements</li>
-      <li class="admin__nav p-14 w-100">Petitions</li>
-      <li class="admin__nav p-14 w-100">Events</li>
+    <ul fxLayout="column" class="w-100 fw-600 ps-16">
+      <li class="admin__nav py-14 w-100 color--black-07"><i class="pi pi-th-large me-8 color--black-07 fw-800"></i>Overview</li>
+      <li class="admin__nav py-14 w-100 color--black-07"><i class="pi pi-book me-8 color--black-07 fw-800"></i>Blogs</li>
+      <li class="admin__nav py-14 w-100 color--black-07"><i class="pi pi-file me-8 color--black-07 fw-800"></i>Endorsements</li>
+      <li class="admin__nav py-14 w-100 color--black-07"><i class="pi pi-file-edit me-8 color--black-07 fw-800"></i>Petitions</li>
+      <li class="admin__nav py-14 w-100 color--black-07"><i class="pi pi-calendar me-8 color--black-07 fw-800"></i>Events</li>
+      <li class="admin__nav py-14 w-100 color--black-07"><i class="pi pi-envelope me-8 color--black-07 fw-800"></i>Posts</li>
     </ul>
   </nav>
-  <div class="w-80 bg-secondary">
+  <div class="w-87 bg-secondary">
     <div class="w-100 bg-white py-20 px-30 box--shadow-bottom" fxLayout="row" fxLayoutAlign="space-between center">
-      <h2>Admin Dashboard</h2>
+      <h3 class="my-0">Admin Dashboard</h3>
       <div fxLayout="row" fxLayoutGap="14" fxLayoutAlign="start center">
         <img src="../../assets/images/profile.png" alt="profile" width="32" height="32">
         <div>
@@ -23,44 +24,50 @@
       </div>
     </div>
     <div class="px-30">
-      <h1>Hi Admin</h1>
+      <h3>Hi Admin</h3>
       <p class="text-primary">Welcome back to NIP dashboard</p>
     </div>
     <div class="px-30 w-100">
       <div class="w-100" fxLayout="row" fxLayoutGap="30">
-        <div class="bg-white cards text--center w-25 py-16 px-30">
-          <h3>Endorsement</h3>
-          <p>200</p>
+        <div fxLayout="column" fxLayoutAlign="center center" class="bg-white cards text--center w-25">
+          <h4 class="mt-0">Endorsement</h4>
+          <p class="color--black-07 fw-600 my-0">200</p>
         </div>
         <div class="bg-white cards text--center w-25 py-16 px-30">
-          <h3>Petition</h3>
-          <p>100</p>
+          <h4 class="mt-0">Petition</h4>
+          <p class="color--black-07 my-0 fw-600">100</p>
         </div>
         <div class="bg-white cards text--center w-25 py-16 px-30">
-          <h3>Posts</h3>
-          <p>400</p>
+          <h4 class="mt-0">Posts</h4>
+          <p class="color--black-07 my-0 fw-600">400</p>
         </div>
         <div class="bg-white cards text--center w-25 py-16 px-30">
-          <h3>Users</h3>
-          <p>2000</p>
+          <h4 class="mt-0">Users</h4>
+          <p class="color--black-07 my-0 fw-600">2000</p>
         </div>
       </div>
+
+      <div class="card">
+        <h3>Dzongkhag Data</h3>
+        <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+      </div>
+
       <div class="w-100 my-30 bg-white">
         <div class="w-100 py-8 bg-light-blue px-20 box--shadow-bottom fw-600 text--center" fxLayout="row" fxLayoutGap="30" fxLayoutAlign="start center">
-          <p class="w-100">No</p>
-          <p class="w-100">Username</p>
-          <p class="w-100">Profile</p>
-          <p class="w-100">Date</p>
-          <p class="w-100">Action</p>
+          <p class="w-100 my-6">No</p>
+          <p class="w-100 my-6">Username</p>
+          <p class="w-100 my-6">Profile</p>
+          <p class="w-100 my-6">Date</p>
+          <p class="w-100 my-6">Action</p>
         </div>
-        <div class="px-20 py-4 box--shadow-bottom text--center" fxLayout="row" fxLayoutGap="30" fxLayoutAlign="start center" *ngFor="let number of [1, 2, 3, 4, 5]">
-          <p class="w-100">{{number}}</p>
-          <p class="w-100">David</p>
+        <div class="px-20 py-4 box--shadow-bottom text--center user-data" fxLayout="row" fxLayoutGap="30" fxLayoutAlign="start center" *ngFor="let number of [1, 2, 3, 4, 5]">
+          <p class="w-100 color--black-07">{{number}}</p>
+          <p class="w-100 color--black-07">David</p>
           <div class="w-100">
             <img src="../../assets/images/profile.png" alt="profile" width="40" height="40">
           </div>
-          <p class="w-100">25/10/2022</p>
-          <p class="w-100"><i class="pi pi-trash"></i></p>
+          <p class="w-100 color--black-07">25/10/2022</p>
+          <p class="w-100"><i class="pi pi-trash color--black-07 cursor--pointer"></i></p>
         </div>
       </div>
     </div>
