@@ -37,6 +37,7 @@ export class AuthComponent implements OnInit {
       localStorage.setItem("email", value.user.email);
       localStorage.setItem("userType", value.user.userType);
       localStorage.setItem("id", value.user._id);
+      console.log('done')
     })
   }
 

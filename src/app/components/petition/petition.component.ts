@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PetitionService } from 'src/app/services/petition/petition.service';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+
 
 @Component({
   selector: 'app-petition',
@@ -8,41 +10,54 @@ import { PetitionService } from 'src/app/services/petition/petition.service';
   styleUrls: ['./petition.component.scss']
 })
 export class PetitionComponent implements OnInit {
-
   id: string = '';
   petition: any;
   petitions: any;
 
-  /* responses = [
-    {
-      name: 'Adam Smith',
-      time: '2 minutes ago',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget luctus tellus. Duis euismod tellus arcu, vitae convallis lectus tincidunt ac. Morbi eros metus, suscipit nec eros id, dictum condimentum nisi.'
-    },
-    {
-      name: 'Adam Smith',
-      time: '2 minutes ago',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget luctus tellus. Duis euismod tellus arcu, vitae convallis lectus tincidunt ac. Morbi eros metus, suscipit nec eros id, dictum condimentum nisi.'
-    }
-  ]; */
+  signatureForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', Validators.required],
+    address: ['', Validators.required],
+    comments: ['', Validators.required],
+  });
 
-  constructor(private petitionService: PetitionService, private route: ActivatedRoute) { }
+  showValidationErros: boolean = false;
+
+
+  constructor(private petitionService: PetitionService, private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id)
-    this.petitionService.getAPost(this.id).subscribe(petitions => {
-      this.petitions = petitions;
-      console.log(this.petitions)
-    });
+    this.petitionDetail();
   }
 
   petitionDetail(): void{
-    // debugger
-    this.petitionService.getAPost(this.id).subscribe(petitions => {
-      this.petitions = petitions;
-      console.log(this.petitions)
+    this.petitionService.getAPost(this.id).subscribe(petition => {
+      this.petition = petition;
+      console.log(this.petition)
     });
+  }
+
+  onFormSubmit(form: FormGroup) {
+    if (!form.valid) {
+      this.showValidationErros = true;
+      console.log('form is invalid');
+      return;
+    };
+    this.showValidationErros = false;
+
+    const body = {
+      comments: form.value.comments,
+      email: form.value.email,
+      name: form.value.name,
+      address: form.value.address,
+      petitionId: this.petition._id
+    }
+  console.log(body)
+
+    this.petitionService.postSignature(body).subscribe(val=>console.log(val));
+    form.reset();
   }
 
 }

@@ -29,24 +29,13 @@ export class PostEndorsementComponent implements OnInit {
     }
   }
 
-  // unChecked() {
-  //   const checkBox = document.getElementById("unChecked") as HTMLInputElement | null;
-  //   const text = document.getElementById("partnerForm") as HTMLInputElement;
-  //   if (checkBox?.checked) {
-  //     text.style.display = "none";
-  //   } else {
-  //     text.style.display = "none";
-  //   }
-  // }
 
   constructor(private fb: FormBuilder, private endorsementService: EndorsementService, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  /* get f(){
-    return this.endorsementForm.controls;
-  } */
+
 
   onFileChange(event: any) {
     if (event.target.files.length > 0) {

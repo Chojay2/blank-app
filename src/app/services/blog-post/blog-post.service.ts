@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PetitionService {
+export class BlogPostService {
 
   constructor(private http: HttpClient) { }
 
@@ -13,23 +13,23 @@ export class PetitionService {
 
 
   getAllPost(): Observable<any> {
-    return this.http.get(`${this.baseURL}/public-petitions/get-petitions?skip=0&limit=20`)
+    return this.http.get(`${this.baseURL}/public-posts/get-posts?skip=0&limit=20`)
  }
 
  getAPost(id: any): Observable<any> {
-  return this.http.get(`${this.baseURL}/public-petitions/get-petition?petitionId=${id}`)
+  return this.http.get(`${this.baseURL}/public-posts/get-post?endorsementId=${id}`)
 }
 
-  postSignature(data: any): Observable<any> {
-  return this.http.post(`${this.baseURL}/petitions/sign-petition`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NDk5MTkzfQ.K4XX_II0lJojTOpxypRw0spbg5hgNs5xwfLG7FWqHN0')})
+  uploadAPost(data: any): Observable<any> {
+  return this.http.post(`${this.baseURL}/posts/add-post`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NDk5MTkzfQ.K4XX_II0lJojTOpxypRw0spbg5hgNs5xwfLG7FWqHN0')})
   }
 
   updateData(data: any, id: string): Observable<any> {
-    return this.http.post(`${this.baseURL}/petitions/edit-petition`, data)
+    return this.http.post(`${this.baseURL}/posts/edit-post`, data)
   }
 
   deleteData(id: any): Observable<any> {
-    return this.http.post(`${this.baseURL}/delete-petition`, id)
+    return this.http.post(`${this.baseURL}/delete-post`, id)
 }
 
   addGallery(data: any, file: File): Observable<any> {
@@ -47,7 +47,7 @@ export class PetitionService {
       headers: header
     };
 
-    const req = new HttpRequest('POST', `${this.baseURL}/petitions/add-petition`, formData, options);
+    const req = new HttpRequest('POST', `${this.baseURL}/posts/add-post`, formData, options);
     return this.http.request(req);
   }
 }
