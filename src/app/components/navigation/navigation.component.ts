@@ -8,18 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class NavigationComponent implements OnInit {
 
   lists: string[];
-
+  userName = localStorage.getItem('name')
   constructor() {
     this.lists = ['Home', 'Endorsement', 'Petition', 'Blog', 'Recommendations'];
   }
 
   ngOnInit(): void {
+   
   }
 
   displayModal: boolean;
 
   showModalDialog() {
     this.displayModal = true;
+  }
+  hideDialog($event){
+    this.hideModalDialog();
   }
   hideModalDialog() {
     this.displayModal = false;
