@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {EndorsementService} from "../../services/endorsement/endorsement.service";
+import {catagories} from "../../shared/constants";
 
 @Component({
   selector: 'app-endorsement-list',
@@ -10,7 +11,7 @@ import {EndorsementService} from "../../services/endorsement/endorsement.service
 export class EndorsementListComponent implements OnInit {
   posts: any;
   items: string[];
-
+  categories = catagories;
   constructor(private endoresementService: EndorsementService, private router: Router) {
     this.items = ['All', 'Technology', 'Sports', 'Programming', 'Something', 'Anything'];
 
