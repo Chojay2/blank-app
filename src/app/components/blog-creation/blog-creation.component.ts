@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {catagories} from "../../shared/constants";
 
 @Component({
   selector: 'app-blog-creation',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-creation.component.scss']
 })
 export class BlogCreationComponent implements OnInit {
+  catagories = catagories;
 
   files: File[] = [];
 
