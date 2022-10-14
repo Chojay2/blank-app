@@ -25,16 +25,16 @@
         <img src="{{post.image}}" class="position--relative rounded--md" height="420" alt="post cover">
         <div class="post__chip bg-white pe-12 rounded--lg position--absolute cursor--pointer" fxLayout="row" fxLayoutGap="12" fxLayoutAlign="start center" fxFlexAlign="center">
           <img src="../../../assets/images/profile.png" width="40" height="40" alt="profile">
-          <p class="text-primary">Karma Tenzin</p>
+          <p class="text-dark">{{post.user.name}}</p>
         </div>
         <div class="position--absolute bg-white px-4 pt-4 pb-0 rounded--lg cursor--pointer bookmark m-16">
           <i class="pi pi-heart-fill" style="font-size: 24px"></i>
         </div>
-        <h2 class="fs-28 m-0">{{post.title}}</h2>
-        <p class="text-primary fs-20 box--shadow-bottom m-0 pb-20">{{post.description}}</p>
+        <h2 class="fs-28 my-0 p-0">{{post.title}}</h2>
+        <div class="text-primary elipses fs-20 box--shadow-bottom my-0 pb-20" [innerHTML]="post.description"></div>
         <div class="w-100 pb-16 box--shadow-bottom" fxLayout="row" fxLayoutAlign="space-between center">
-          <p-progressBar class="w-70" value="50"></p-progressBar>
-          <p class="fs-14 fw-300 m-0 text-primary">100 Signatures</p>
+          <p-progressBar class="w-70" value="{{post.endorse.length}}"></p-progressBar>
+          <p class="fs-14 fw-300 m-0 text-primary">{{post.goal}} Signatures</p>
         </div>
         <button class="btn-outline-dark rounded--lg" (click)="readMore(post._id)">Read More</button>
       </div>
