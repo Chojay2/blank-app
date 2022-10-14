@@ -3,6 +3,14 @@
         <div class="w-50">
           <div class="w-100">
             <h1 class="fs-38">{{endoresement.title}}</h1>
+            <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start">
+              <img src="{{endoresement.user.image}}" alt="profile" width="50" height="50">
+              <div fxLayout="column">
+                <p class="m-0 fs-20 fw-400">Written by {{endoresement.user.name}}</p>
+                <p class="my-2">January 4, 2020</p>
+                <p class="my-2">{{endoresement.user.location}}</p>
+              </div>
+            </div>
             <div class="fs-24 w-80" [innerHTML]="endoresement.description">
             </div>
           </div>
@@ -19,6 +27,7 @@
             <div class="p-32 box--shadow-bottom" fxLayout="column" fxLayoutGap="32">
                 <p class="fs-24 fw-600 m-0">{{endoresement.endorse.length}} endorsed so far. Help us get to {{endoresement.goal}}</p>
                 <p-progressBar value="50"></p-progressBar>
+
             </div>
             <form [formGroup]="signatureForm" (submit)="onFormSubmit(signatureForm)" action="" class="p-32 w-100" fxLayout="column" fxLayoutGap="32">
                 <p class="fs-28 fw-600 m-0">Thank you for signing</p>
