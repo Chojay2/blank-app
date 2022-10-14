@@ -1,28 +1,18 @@
-<div class="position--fixed bg-white py-2 px-4 rounded--circle chat" (click)="onclick()">
-  <img src="../../../assets/images/chat.svg" alt="chat" width="35" height="35">
+<div class="position--fixed bg-white px-2 pt-2 rounded--circle chat" (click)="onclick()">
+  <img src="../../../assets/images/chat.svg" alt="chat" width="45" height="45">
 </div>
 <ng-container *ngIf="visible">
   <div class="chat--container bg-white position--fixed">
-    <div class="chat--header rounded px-20 py-10 bg-light-blue" fxLayout="row" fxLayoutGap="20" fxLayoutAlign="start center">
-      <img src="../../../assets/images/bot.svg" class="bg-pink rounded--circle p-8" alt="bot" width="50" height="50">
-      <p>PendoBot</p>
+    <div class="chat--header rounded px-20 py-10 bg-primary text-white fs-20" fxLayout="row" fxLayoutGap="20" fxLayoutAlign="start center">
+      <img src="../../../assets/images/bot.svg" class="bg-light-blue rounded--circle p-8" alt="bot" width="50" height="50">
+      <p>Messages</p>
     </div>
-    <div class="px-20">
-      <div fxLayout="row" fxLayoutGap="20" fxLayoutAlign="start center">
-        <img src="../../../assets/images/bot.svg" class="rounded--circle bg-pink p-8" alt="bot" width="40" height="40">
-        <p class="w-60 p-12 bg-secondary rounded">Welcome back! What can we help you with?</p>
-      </div>
-      <div fxLayout="column" fxLayoutGap="12" fxLayoutAlign="end end">
-        <p class="p-12 border--light-blue rounded my-0">Help articles</p>
-        <p class="p-12 border--light-blue rounded my-0">Talk to support</p>
-        <p class="p-12 border--light-blue rounded my-0">I have a question</p>
-      </div>
-    </div>
-    <div class="w-100 px-20 my-30" fxLayout="row" fxLayoutGap="20" fxLayoutAlign="start center">
-      <input type="text" class="w-70 py-12 bg-secondary" placeholder="Type here...">
-      <p class="fs-10 text-primary border--primary p-2 rounded cursor--pointer">GIF</p>
-      <i class="pi pi-paperclip cursor--pointer" style="font-size: 18px"></i>
-      <i class="pi pi-wrench cursor--pointer" style="font-size: 18px"></i>
+<!--    User listing-->
+<!--    <div>-->
+<!--      <app-chat-list></app-chat-list>-->
+<!--    </div>-->
+    <div>
+      <app-chats></app-chats>
     </div>
   </div>
 </ng-container>

@@ -13,10 +13,10 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(body:LoginFormModel): Observable<any> {
-   return  this.http.post("https://safe-spire-99671.herokuapp.com/auth/login",body)
+   return  this.http.post("http://localhost:8080/auth/login",body)
   }
 
   signup(body:SignUpFromModal): Observable<any> {
-    return this.http.post("https://safe-spire-99671.herokuapp.com/auth/register",body)
+    return this.http.post("http://localhost:8080/auth/register",body)
   }
 }

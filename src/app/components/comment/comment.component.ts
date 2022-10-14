@@ -10,6 +10,7 @@ import { CommentService } from 'src/app/services/comment/comment.service';
 })
 export class CommentComponent implements OnInit {
   @Input() id: any;
+  @Input() type: string;
 
   commentForm = this.fb.group({
     comment: ['', Validators.required],
@@ -20,7 +21,7 @@ export class CommentComponent implements OnInit {
   constructor(private fb: FormBuilder,  private commentService: CommentService) { }
 
   ngOnInit(): void {
-     
+  console.log(this.type)
   }
 
   onFormSubmit(form: FormGroup) {
@@ -29,17 +30,48 @@ export class CommentComponent implements OnInit {
      return;
     };
     this.showValidationErros = false;
-  
+
 
     console.log(form.value.rating )
-    var body = {
+    var endorsementBody = {
       endorsementId: this.id,
       comment: form.value.comment,
       rating: form.value.rating
     }
-    this.commentService.commentEndorsement(body).subscribe(response=>{
-      console.log(response)
-    })
+    var petitionBody = {
+      petitionId: this.id,
+      comment: form.value.comment,
+      rating: form.value.rating
+    }
+    var postBody = {
+      petitionId: this.id,
+      comment: form.value.comment,
+      rating: form.value.rating
+    }
+
+    switch (this.type) {
+      case "endorsement": {
+        this.commentService.commentEndorsement(endorsementBody).subscribe(response => {
+          console.log(response)
+        })
+        break;
+      }
+
+      case "petition": {
+        this.commentService.commentPetition(petitionBody).subscribe(response => {
+          console.log(response)
+        })
+        break;
+      }
+
+      case "blog": {
+        this.commentService.commentPost(postBody).subscribe(response => {
+          console.log(response)
+        })
+        break;
+      }
+
+    }
     form.reset();
   }
 

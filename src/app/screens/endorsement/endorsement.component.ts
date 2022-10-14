@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,54 +10,35 @@ import { EndorsementService } from 'src/app/services/endorsement/endorsement.ser
   styleUrls: ['./endorsement.component.scss']
 })
 export class EndorsementComponent implements OnInit {
+  id: string = '';
+  endoresement: any;
+  comments: any;
   endorsementPosts: any;
   endorsementPost: any;
-  objectLenght: any;
 
-  responses = [
-    {
-      name: 'Adam Smith',
-      time: '2 minutes ago',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget luctus tellus. Duis euismod tellus arcu, vitae convallis lectus tincidunt ac. Morbi eros metus, suscipit nec eros id, dictum condimentum nisi.'
-    },
-    {
-      name: 'Adam Smith',
-      time: '2 minutes ago',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget luctus tellus. Duis euismod tellus arcu, vitae convallis lectus tincidunt ac. Morbi eros metus, suscipit nec eros id, dictum condimentum nisi.'
-    }
-  ];
+  signatureForm = this.fb.group({
+    title: ['', Validators.required],
+    goal: ['', Validators.required],
+    description: ['', Validators.required],
+    file: ['', Validators.required],
+    fileSource: ['', Validators.required]
+  });
 
-  constructor(
-    private endorsementService: EndorsementService
-  ) { }
+  constructor(private endorsementService: EndorsementService, private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id)
+    this.endorsementDetail();
+  }
 
-    this.endorsementService.getAllPost()
-      .subscribe(data => {
-        this.endorsementPosts = data;
-        this.objectLenght = Object.keys(this.endorsementPosts).length
-        console.log(this.objectLenght)
-      })
-
-
-      console.log('thimps')
-
-
-      // for(let i = 0; i < this.objectLenght; i++){
-      //   let location=this.endorsementPost[i].users
-      //   console.log(location)
-      //   if(location == "thimphu"){
-      //     console.log('thimps')
-      //   }
-      // }
-    let id = "63387bdcba184acd8944f8bb";
-
-    this.endorsementService.getAPost(id)
-      .subscribe(data => {
-        this.endorsementPost = data;
-        console.log(this.endorsementPost)
-      })
+  endorsementDetail(): void{
+    this.endorsementService.getAPost(this.id).subscribe(endoresement => {
+      this.endoresement = endoresement;
+      this.comments = this.endoresement.comments;
+      console.log(this.comments)
+      console.log(this.endoresement)
+    });
   }
 
 }

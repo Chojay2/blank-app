@@ -2,11 +2,11 @@
   <div class="w-100 bg-dark text-white py-60">
     <div class="w-70 mx-auto" fxLayout="row" fxLayoutAlign="space-between center">
       <div class="w-40">
-        <p class="my-20 fs-56 fw-700">This is the blog title</p>
+        <p class="my-20 fs-56 fw-700">{{blogPost.title}}</p>
         <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start">
           <img src="../../../assets/images/profile.png" alt="profile" width="50" height="50">
           <div fxLayout="column">
-            <p class="m-0 fs-20 fw-400">Written by Evan Stammers</p>
+            <p class="m-0 fs-20 fw-400">Written by {{blogPost.user.name}}</p>
             <p class="my-2 text-white-60">January 4, 2020</p>
             <p class="my-2 text-white-60">Flag</p>
           </div>
@@ -20,34 +20,25 @@
   </div>
   <div class="w-100 blog__content py-30">
     <div class="w-60 mx-auto">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at tempus erat. Vestibulum vehicula malesuada malesuada. Phasellus mattis eu turpis sed egestas. Nam aliquam at magna eu hendrerit. Nunc vitae mauris sit amet lorem dictum fringilla. Ut congue egestas sem sit amet facilisis. Proin malesuada ut neque ac tempus. Nunc cursus tempor libero, ac luctus tortor facilisis sed. Sed luctus lorem quam, non congue nisl semper quis.
-
-        Curabitur sit amet iaculis risus. Aliquam tristique tempus enim, vulputate lobortis neque blandit ut. Proin eget libero et purus dignissim commodo sit amet at nibh. Nulla facilisi. Nullam porttitor pretium erat in semper. Nullam ultrices eleifend quam id hendrerit. Vivamus ac odio eu sem placerat porta. In at aliquam est.
-
-        Ut faucibus viverra est id cursus. Praesent quam nisl, fringilla eu leo a, vulputate sollicitudin est. Mauris mauris nulla, pulvinar id libero nec, egestas porttitor est. Morbi at semper sem, ac pharetra nisl. Proin consectetur mauris ac felis dapibus, ut convallis risus lobortis. Fusce pellentesque dictum urna eu hendrerit. Vivamus volutpat non felis venenatis venenatis. Pellentesque nec hendrerit tortor. In suscipit interdum magna, nec lacinia urna condimentum vitae. Fusce accumsan sollicitudin efficitur. Ut id elit pellentesque, dapibus neque a, fringilla eros. Curabitur vel elementum leo. Proin ultrices hendrerit mauris vel vestibulum.
-
-        Aenean in sem bibendum, faucibus justo ac, vehicula arcu. Donec euismod quis nisi eget fermentum. Quisque blandit suscipit neque, vitae dictum risus. Etiam in risus quis quam placerat fermentum at non lectus. Sed porttitor in dui vitae commodo. Donec vitae ipsum nunc. Aliquam lorem velit, aliquam sed justo ut, luctus sodales ante. Nulla facilisi. Sed eu ex
-      </p>
+      <p>{{blogPost.description}}</p>
     </div>
     <div class="w-60 mx-auto bg-light rounded">
-      <app-comment class="w-100"></app-comment>
+      <app-comment class="w-100" [id]="blogPost._id" [type]="'blog'"></app-comment>
       <div class="p-40">
         <div class="w-100" fxLayout="row" fxLayoutAlign="space-between center">
           <h2>Recent responses</h2>
           <p class="text-primary cursor--pointer">+ Follow reactions</p>
         </div>
         <div fxLayout="column" fxLayoutGap="16">
-          <div class="rounded bg-white border--primary" *ngFor="let response of responses">
+          <div class="rounded bg-white border--primary" *ngFor="let postComment of comments">
             <div class="p-20 box--shadow-bottom" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center">
               <img src="../../../assets//images/profile.png" alt="Profile picture"
                    width="50" height="50">
               <p class="text-primary fw-600">
-                {{response.name}} <span class="text-black fw-500">commented on</span> Home
+                {{postComment.user.name}} <span class="text-black fw-500">commented on</span> 1:10pm 10 oct 2022
               </p>
-              <p>{{response.time}}</p>
             </div>
-            <p class="p-20 m-0">{{response.description}}</p>
+            <p class="p-20 m-0">{{postComment.comment}}</p>
           </div>
         </div>
       </div>

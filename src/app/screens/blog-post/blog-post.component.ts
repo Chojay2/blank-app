@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BlogPostService } from 'src/app/services/blog-post/blog-post.service';
 import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
 
 
@@ -12,7 +14,7 @@ export class BlogPostComponent implements OnInit {
   items: string[];
 
 
-  constructor(private endorsementService: EndorsementService) {
+  constructor(private blogPostService: BlogPostService, private router: Router) {
     this.items = ['All', 'Technology', 'Sports', 'Programming', 'Something', 'Anything'];
 
 
@@ -20,11 +22,15 @@ export class BlogPostComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.endorsementService.getAllPost()
+    this.blogPostService.getAllPost()
       .subscribe(data => {
         this.posts = data;
         console.log(this.posts)
       })
+  }
+
+  readMore(_id: string): void {
+    this.router.navigate(['blog', _id]);
   }
 
 }
