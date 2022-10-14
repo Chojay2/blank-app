@@ -15,13 +15,11 @@ export class EndorsementComponent implements OnInit {
   comments: any;
   endorsementPosts: any;
   endorsementPost: any;
+  showValidationErros: boolean = false;
 
   signatureForm = this.fb.group({
-    title: ['', Validators.required],
-    goal: ['', Validators.required],
-    description: ['', Validators.required],
-    file: ['', Validators.required],
-    fileSource: ['', Validators.required]
+    email: ['', Validators.required],
+    comment: ['', Validators.required]
   });
 
   constructor(private endorsementService: EndorsementService, private route: ActivatedRoute, private fb: FormBuilder) { }
@@ -39,6 +37,26 @@ export class EndorsementComponent implements OnInit {
       console.log(this.comments)
       console.log(this.endoresement)
     });
+  }
+
+  onFormSubmit(form: FormGroup) {
+    debugger
+    if (!form.valid) {
+      this.showValidationErros = true;
+      console.log('form is invalid');
+      return;
+    };
+    this.showValidationErros = false;
+
+    const body = {
+      email: form.value.email,
+      comment: form.value.comment,
+      endorsementId: this.endoresement._id
+    }
+  console.log(body)
+
+    this.endorsementService.endorsePost(body).subscribe(val=>console.log(val));
+    form.reset();
   }
 
 }
