@@ -53,6 +53,8 @@ import { TableModule } from 'primeng/table';
 import { PostLocationComponent } from './components/post-location/post-location.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
+import { ChatListComponent } from './components/chat-list/chat-list.component';
+import { ChatsComponent } from './components/chats/chats.component';
 
 
 @NgModule({
@@ -89,7 +91,9 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
     ShareComponent,
     PostLocationComponent,
     AdminDashboardComponent,
-    ChatBotComponent
+    ChatBotComponent,
+    ChatListComponent,
+    ChatsComponent,
 
   ],
   imports: [

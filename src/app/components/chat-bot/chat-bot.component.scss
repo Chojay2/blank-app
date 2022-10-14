@@ -13,10 +13,17 @@
 }
 
 .chat--container {
-  width: 500px;
+  width: 400px;
+  height: 50vh;
   right: 0;
   bottom: 0;
   margin-bottom: 120px;
   margin-right: 120px;
   border-radius: 20px;
+  z-index: 1000;
+}
+
+.chat--header {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
