@@ -10,7 +10,10 @@
     <div class="w-100" fxLayout="row wrap" fxLayoutAlign="center">
       <div class="p-28 card transition mt-40 me-40 w-20 form"*ngFor="let profile of userProfiles">
         <div>
-          <a [routerLink]="['/user', profile._id]">asdasd</a>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <a [routerLink]="['/user', profile._id]">See more</a>
+            <p class="text-primary fw-600"><i class="pi pi-plus me-10" style="font-size: 14px; font-weight: 600"></i>Follow</p>
+          </div>
           <div class="w-100 text--center">
             <img src="{{profile.profile}}" alt="profile" width="80" height="80">
           </div>
