@@ -119,6 +119,9 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     &--none {
       border: 0;
     }
+  &--light-blue {
+    border: 2px solid $light-blue;
+  }
 }
 
 .rounded {
@@ -164,6 +167,15 @@ $fontWeights: 300, 400, 500, 600, 700, 800;
     }
   &-blue {
     background-color: $blue;
+  }
+  &-light-blue {
+    background-color: $light-blue;
+  }
+  &-light-violet {
+    background-color: $light-violet;
+  }
+  &-pink {
+    background-color: $pink;
   }
 }
 

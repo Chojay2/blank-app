@@ -1,0 +1,18 @@
+@import "../../assets/stylesheets/_variables.scss";
+
+.admin__nav {
+  border-radius: 4px;
+  transition: 0.2s ease-in-out;
+  &:hover, &:focus {
+    font-weight: 600;
+    background-color: $secondary;
+  }
+}
+
+.cards {
+  border-radius: 10px;
+}
+
+td, th {
+  width: 100%;
+}
