@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../../srvices/auth.service";
 
 @Component({
@@ -8,26 +8,42 @@ import { AuthService } from "../../srvices/auth.service";
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
+  cities: any;
+  selectedCity1: any;
 
   signInForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
   });
 
-  signUpForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-    repeatPassword: new FormControl(''),
-    contact: new FormControl(''),
-    gender: new FormControl(''),
-    userType: new FormControl('')
+
+
+  signUpForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+    repeatPassword: ['', Validators.required],
+    contact: ['', Validators.required],
+    file: ['', Validators.required],
+    fileSource: ['', Validators.required],
+    location: ['', Validators.required]
   });
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService,private fb: FormBuilder) {
+  
   }
 
   ngOnInit(): void {
+    this.cities = [
+      'Tsirang',
+      'Thimphu',
+      'Trashigang',
+      'Sarpang',
+      'Haa',
+      'Paro',
+      'Chhukha',
+      'Samtse'
+  ];
   }
 
   logIn(): void {
@@ -39,11 +55,29 @@ export class AuthComponent implements OnInit {
       localStorage.setItem("id", value.user._id);
       console.log('done')
     })
+    
   }
 
   signUp(): void {
-    const {repeatPassword, ...rest} = this.signUpForm.value
-    this.auth.signup(rest).subscribe(value => console.log(value))
+    const body = {
+      name: this.signUpForm.value.name,
+      email: this.signUpForm.value.email,
+      password: this.signUpForm.value.password,
+      contact: this.signUpForm.value.contact,
+      file: this.signUpForm.value.fileSource,
+      location: this.signUpForm.value.location
+    }
+    this.auth.signup(body,body.file).subscribe(value => console.log(value))
+  }
+
+  onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.signUpForm.patchValue({
+        fileSource: file
+      });
+      console.log('file', file)
+    }
   }
 
 }
