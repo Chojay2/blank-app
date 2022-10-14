@@ -10,6 +10,15 @@ import { ProfileService } from 'src/app/services/profile/profile.service';
 })
 export class PublicProfileComponent implements OnInit {
 
+  displayProfile: boolean;
+
+  showProfileDialog() {
+    this.displayProfile = true;
+  }
+  hideProfileDialog() {
+    this.displayProfile = false;
+  }
+
   id: any;
   items: string[];
   userDetail: any;
@@ -55,13 +64,5 @@ export class PublicProfileComponent implements OnInit {
         this.userDetail = data;
         console.log(this.userDetail)
       })
-  }
-  displayProfile: boolean;
-
-  showProfileDialog() {
-    this.displayProfile = true;
-  }
-  hideProfileDialog() {
-    this.displayProfile = false;
   }
 }

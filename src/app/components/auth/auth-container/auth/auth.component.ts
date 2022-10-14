@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../../srvices/auth.service";
 
@@ -8,6 +8,7 @@ import { AuthService } from "../../srvices/auth.service";
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
+  @Input() close: any;
   cities: any;
   selectedCity1: any;
 
@@ -53,7 +54,7 @@ export class AuthComponent implements OnInit {
       localStorage.setItem("email", value.user.email);
       localStorage.setItem("userType", value.user.userType);
       localStorage.setItem("id", value.user._id);
-      console.log('done')
+      this.close();
     })
     
   }
@@ -67,7 +68,7 @@ export class AuthComponent implements OnInit {
       file: this.signUpForm.value.fileSource,
       location: this.signUpForm.value.location
     }
-    this.auth.signup(body,body.file).subscribe(value => console.log(value))
+    this.auth.signup(body,body.file).subscribe(() =>  this.close())
   }
 
   onFileChange(event: any) {

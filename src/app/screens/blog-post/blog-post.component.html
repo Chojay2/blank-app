@@ -1,16 +1,17 @@
 <div class="w-100 my-30">
     <div  class="w-70 mx-auto" fxLayout="column" fxLayoutGap="60">
         <div class="w-100 p-50 border--secondary rounded--md position--relative" fxLayout="column" fxLayoutAlign="end">
-            <h1 class="fs-30 m-0">Discover Nice Articles Here</h1>
-            <p class="text-darken w-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.</p>
+            <h1 class="fs-30 m-0">Discover Innovation Journey Here</h1>
+            <p class="text-darken w-50">“Innovation is seeing what everybody has seen and thinking what nobody has thought.” –Dr. Albert, Szent- Györgyi</p>
             <div fxLayout="row wrap" fxLayoutGap="20" fxLayoutAlign="start center">
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input type="text" pInputText placeholder="Search" />
                 </span>
-                <div class="blog-menu py-8 px-24 rounded--lg text-darken fs-22 fw-400 text--black-75" *ngFor="let item of items">{{item}}</div>
+                <div class="blog-menu py-8 px-24 rounded--lg text-darken fs-22 fw-400 text--black-75" *ngFor="let item of categories">
+                  <span>{{item}}</span></div>
             </div>
-            <h2 class="article-title position--absolute fs-28 bg-white px-40 m-0 text--center" fxFlexAlign="center">Articles</h2>
+            <h2 class="article-title position--absolute fs-28 bg-white px-40 m-0 text--center" fxFlexAlign="center">Blogs</h2>
         </div>
         <div class="w-100 p-50 blog-post" fxLayout="column" fxLayoutAlign="start center">
             <div class="bg-white px-12 py-8 rounded--lg" fxLayout="row" fxLayoutGap="12" fxLayoutAlign="start center">
