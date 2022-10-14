@@ -67,7 +67,7 @@ export class UploadPetitionComponent implements OnInit {
     console.log(body);
 
     this.petitionService.addGallery(body, body.file).subscribe(val=>console.log(val));
-    form.reset();
+    //form.reset();
   }
 
 }

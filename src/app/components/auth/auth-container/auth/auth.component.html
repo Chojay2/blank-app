@@ -35,8 +35,17 @@
                 <input formControlName="password" id="password" type="password" class="bg-secondary fs-18 w-100 mb-20" placeholder="Password" required>
                 <input formControlName="password" id="repeatPassword" type="password" class="bg-secondary fs-18 w-100 mb-20" placeholder="Retype password" required>
                 <input formControlName="contact" id="contact" type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Contact" required>
-                <input formControlName="gender" id="gender" type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="Gender" required>
-                <input formControlName="userType" id="user-type" type="text" class="bg-secondary fs-18 w-100 mb-20" placeholder="User type" required>
+                <p-dropdown formControlName="location" [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select your Dzongkhag"
+                [showClear]="true">
+                </p-dropdown>
+
+                <div class="dropzone bg-secondary mb-12 rounded text--center" >
+                  <input
+                    type="file"
+                    name="file"
+                    formControlName="file"
+                    (change)="onFileChange($event)">
+                </div>
                 <button  class="w-100 btn-primary mb-16" (click)="signUp()">Sign Up</button>
               </div>
             </div>

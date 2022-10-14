@@ -13,4 +13,16 @@
   .signin-potions {
     border-top: 2px solid $primary ;
   }
+  .p-dropdown{
+    width: 100% !important;
+    margin-bottom: 16px;
+    background-color: #F1EEE9;
+  }
+}
+.dropzone {
+  border: 2px dashed $primary;
+  &__container {
+    background: $lightenMore !important;
+    border: none;
+  }
 }

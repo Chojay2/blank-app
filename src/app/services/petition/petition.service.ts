@@ -21,7 +21,7 @@ export class PetitionService {
 }
 
   postSignature(data: any): Observable<any> {
-  return this.http.post(`${this.baseURL}/petitions/sign-petition`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NDk5MTkzfQ.K4XX_II0lJojTOpxypRw0spbg5hgNs5xwfLG7FWqHN0')})
+  return this.http.post(`${this.baseURL}/petitions/sign-petition`, data, {headers: new HttpHeaders().set('Authorization', localStorage.getItem('token') as string)})
   }
 
   postCount(location: any): Observable<any> {

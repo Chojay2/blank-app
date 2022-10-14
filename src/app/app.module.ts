@@ -56,6 +56,9 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 import {ChartModule} from "primeng/chart";
 import { ChatListComponent } from './components/chat-list/chat-list.component';
 import { ChatsComponent } from './components/chats/chats.component';
+import { GuidanceComponent } from './components/guidance/guidance.component';
+import {TreeModule} from "primeng/tree";
+import {AccordionModule} from "primeng/accordion";
 
 
 @NgModule({
@@ -95,6 +98,7 @@ import { ChatsComponent } from './components/chats/chats.component';
     ChatBotComponent,
     ChatListComponent,
     ChatsComponent,
+    GuidanceComponent,
 
   ],
   imports: [
@@ -128,7 +132,9 @@ import { ChatsComponent } from './components/chats/chats.component';
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
     }),
-    ChartModule
+    ChartModule,
+    TreeModule,
+    AccordionModule
   ],
 
   providers: [],
