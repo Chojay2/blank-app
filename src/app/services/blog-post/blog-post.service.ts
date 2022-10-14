@@ -19,7 +19,13 @@ export class BlogPostService {
  getAPost(id: any): Observable<any> {
   return this.http.get(`${this.baseURL}/public-posts/get-post?endorsementId=${id}`)
 }
+  postCount(location: any): Observable<any> {
+    return this.http.get(`${this.baseURL}/public-posts/get-posts-count?location=${location}`)
+  }
 
+  postByLocation(location: any): Observable<any> {
+    return this.http.get(`${this.baseURL}/public-posts/get-posts-by-loc?location=${location}&skip=0&limit=9`)
+  }
   uploadAPost(data: any): Observable<any> {
   return this.http.post(`${this.baseURL}/posts/add-post`, data, {headers: new HttpHeaders().set('Authorization', `${localStorage.getItem("token")}`)})
   }

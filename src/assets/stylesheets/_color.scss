@@ -15,7 +15,8 @@ $theme-colors: (
   'red': $red,
   'charcoal': $charcoal,
   'seashell': $seashell,
-  'whiteRock': $whiteRock
+  'whiteRock': $whiteRock,
+  'black-07': $black-07
 );
 
 @mixin color($colors, $className, $property) {
@@ -30,5 +31,5 @@ $theme-colors: (
   }
 }
 
-@include color(('white', 'primary', 'dark'), 'color', 'color');
-@include color(('dark', 'white', 'grey', 'primary', 'red', 'charcoal', 'lightenMore', 'seashell', 'whiteRock'), 'bg', 'background-color');
+@include color(('white', 'primary', 'dark', 'black-07'), 'color', 'color');
+@include color(('dark', 'white', 'grey', 'primary', 'red', 'charcoal', 'lightenMore', 'seashell', 'whiteRock', 'black-07'), 'bg', 'background-color');

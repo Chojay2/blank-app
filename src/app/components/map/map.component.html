@@ -98,7 +98,7 @@
       <div class="w-100 my-40 container" fxLayout="row" fxLayoutAlign="space-around center">
         <div>
           <circle-progress class="w-100"
-            [percent]="90"
+            [percent]="petitionPost + endorsementPost + blogPost"
             [radius]="100"
             [outerStrokeWidth]="16"
             [innerStrokeWidth]="0"
@@ -107,7 +107,7 @@
             [animationDuration]="300"
             backgroundColor="#EAEBF6">
           </circle-progress>
-          <p class="text-primary">Of Overall Posts</p>
+          <p class="text-primary">Posts</p>
         </div>
         <div>
           <circle-progress class="w-100"

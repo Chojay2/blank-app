@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/components/auth/srvices/auth.service';
 })
 export class EndorsementService {
 
-  constructor(private http: HttpClient, private auth: AuthService) { }
+  constructor(private http: HttpClient) { }
 
   private baseURL = `http://localhost:8080`
 
@@ -20,7 +20,11 @@ export class EndorsementService {
    getAPost(id: any): Observable<any> {
     return this.http.get(`${this.baseURL}/public-endorsments/get-endorsement?endorsementId=${id}`)
   }
-  postByLocation(location: any): Observable<any> {
+  postCount(location: any): Observable<any> {
+    return this.http.get(`${this.baseURL}/public-endorsments/get-endorsement-count?location=${location}`)
+  }
+
+   postByLocation(location: any): Observable<any> {
     return this.http.get(`${this.baseURL}/public-endorsments/get-endorsements-by-loc?location=${location}&skip=0&limit=9`)
   }
 
