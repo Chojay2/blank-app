@@ -121,7 +121,6 @@ import {AccordionModule} from "primeng/accordion";
     GMapModule,
     DialogModule,
     TableModule,
-
     RatingModule,
     BrowserAnimationsModule,
     NgCircleProgressModule.forRoot({

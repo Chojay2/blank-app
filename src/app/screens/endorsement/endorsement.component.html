@@ -3,24 +3,24 @@
         <div class="w-50">
           <div class="w-100">
             <h1 class="fs-38">{{endoresement.title}}</h1>
-            <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start">
-              <img src="{{endoresement.user.image}}" alt="profile" width="50" height="50">
+            <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start center">
+              <img src="{{endoresement.user.profile}}" class="rounded--circle" alt="profile" width="50" height="50">
               <div fxLayout="column">
                 <p class="m-0 fs-20 fw-400">Written by {{endoresement.user.name}}</p>
-                <p class="my-2">January 4, 2020</p>
-                <p class="my-2">{{endoresement.user.location}}</p>
+                <p class="my-2">{{convertDate(endoresement.createdAt)}}</p>
+                <p class="my-2">{{endoresement.user.location.dzongkhag}}</p>
               </div>
             </div>
             <div class="fs-24 w-80" [innerHTML]="endoresement.description">
             </div>
           </div>
-          <div class="border rounded--md p-20 text--center w-40">
-            <i class="pi pi-briefcase" style="font-size: 40px"></i>
-            <h2 class="mt-30 my-0">Job Title</h2>
-            <p class="fs-18 text-primary my-0">Quisque blandit nunc at metus maximus, at euismod sem iaculis. Maecenas
-              libero quam, vulputate ut turpis quis, malesuada placerat erat.
-            </p>
-          </div>
+<!--          <div class="border rounded&#45;&#45;md p-20 text&#45;&#45;center w-40">-->
+<!--            <i class="pi pi-briefcase" style="font-size: 40px"></i>-->
+<!--            <h2 class="mt-30 my-0">Job Title</h2>-->
+<!--            <p class="fs-18 text-primary my-0">Quisque blandit nunc at metus maximus, at euismod sem iaculis. Maecenas-->
+<!--              libero quam, vulputate ut turpis quis, malesuada placerat erat.-->
+<!--            </p>-->
+<!--          </div>-->
 
         </div>
         <div class="w-50 form">

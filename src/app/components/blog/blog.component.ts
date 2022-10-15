@@ -21,6 +21,10 @@ export class BlogComponent implements OnInit {
     this.blogPostDetail();
   }
 
+  convertDate(date: string){
+    return new Date(date).toDateString()
+  }
+
   blogPostDetail(): void{
     this.blogPostService.getAPost(this.id).subscribe(blogPost => {
       this.blogPost = blogPost;

@@ -3,12 +3,11 @@
     <div class="w-70 mx-auto" fxLayout="row" fxLayoutAlign="space-between center">
       <div class="w-40">
         <p class="my-20 fs-56 fw-700">{{blogPost.title}}</p>
-        <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start">
+        <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start center">
           <img src="../../../assets/images/profile.png" alt="profile" width="50" height="50">
           <div fxLayout="column">
             <p class="m-0 fs-20 fw-400">Written by {{blogPost.user.name}}</p>
-            <p class="my-2 text-white-60">January 4, 2020</p>
-            <p class="my-2 text-white-60">Flag</p>
+            <p class="my-2 text-white-60">{{convertDate(blogPost.createdAt)}}</p>
           </div>
         </div>
       </div>

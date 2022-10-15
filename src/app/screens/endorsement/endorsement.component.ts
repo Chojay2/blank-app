@@ -29,7 +29,9 @@ export class EndorsementComponent implements OnInit {
     console.log(this.id)
     this.endorsementDetail();
   }
-
+   convertDate(date: string){
+    return new Date(date).toDateString()
+  }
   endorsementDetail(): void{
     this.endorsementService.getAPost(this.id).subscribe(endoresement => {
       this.endoresement = endoresement;
