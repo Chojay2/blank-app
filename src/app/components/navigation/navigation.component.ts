@@ -6,15 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-
+  session: any;
   lists: string[];
+  userId: any;
   userName = localStorage.getItem('name')
   constructor() {
     this.lists = ['Home', 'Endorsement', 'Petition', 'Blog', 'Recommendations'];
   }
 
   ngOnInit(): void {
-   
+    this.session = localStorage.getItem("token");
+    this.userId = localStorage.getItem("id");
   }
 
   displayModal: boolean;
