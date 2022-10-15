@@ -30,7 +30,7 @@
     </p-dialog>
     <p class="nav__menu cursor--pointer py-12" (click)="showLoginDialog()">Login</p>
     <p-dialog header="" [(visible)]="displayLogin" [modal]="true" [style]="{width: '30vw'}" [draggable]="false" [resizable]="false">
-      <app-auth></app-auth>
+      <app-auth ></app-auth>
     </p-dialog>
     <div class="cursor--pointer box--shadow px-12 br-4" fxLayout="row" fxLayoutGap="8" fxLayoutAlign="center center" routerLink="/user/{{userId}}" *ngIf="session">
       <img src="{{profile}}" class="rounded--circle" alt="profile" width="34" height="34">

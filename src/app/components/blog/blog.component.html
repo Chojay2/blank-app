@@ -8,6 +8,7 @@
           <div fxLayout="column">
             <p class="m-0 fs-20 fw-400">Written by {{blogPost.user.name}}</p>
             <p class="my-2 text-white-60">{{convertDate(blogPost.createdAt)}}</p>
+            <p class="my-2">{{blogPost.user.location.dzongkhag}}</p>
           </div>
         </div>
       </div>
@@ -19,10 +20,10 @@
   </div>
   <div class="w-100 blog__content py-30">
     <div class="w-60 mx-auto">
-      <p>{{blogPost.description}}</p>
+      <p [innerHTML]="blogPost.description"></p>
     </div>
     <div class="w-60 mx-auto bg-light rounded">
-      <app-comment class="w-100" [id]="blogPost._id" [type]="'blog'"></app-comment>
+      <app-comment class="w-100" [refresh]="blogPostDetail()" [id]="blogPost._id" [type]="'blog'"></app-comment>
       <div class="p-40">
         <div class="w-100" fxLayout="row" fxLayoutAlign="space-between center">
           <h2>Recent responses</h2>
@@ -31,10 +32,10 @@
         <div fxLayout="column" fxLayoutGap="16">
           <div class="rounded bg-white border--primary" *ngFor="let postComment of comments">
             <div class="p-20 box--shadow-bottom" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center">
-              <img src="../../../assets//images/profile.png" alt="Profile picture"
+              <img src="{{postComment.user.profile}}" class="rounded--circle" alt="Profile picture"
                    width="50" height="50">
               <p class="text-primary fw-600">
-                {{postComment.user.name}} <span class="text-black fw-500">commented on</span> 1:10pm 10 oct 2022
+                {{postComment.user.name}} <span class="text-black fw-500"> commented on</span> 1:10pm 10 oct 2022
               </p>
             </div>
             <p class="p-20 m-0">{{postComment.comment}}</p>

@@ -11,6 +11,7 @@ import { CommentService } from 'src/app/services/comment/comment.service';
 export class CommentComponent implements OnInit {
   @Input() id: any;
   @Input() type: string;
+  @Input() refresh:any;
 
   commentForm = this.fb.group({
     comment: ['', Validators.required],
@@ -53,6 +54,7 @@ export class CommentComponent implements OnInit {
       case "endorsement": {
         this.commentService.commentEndorsement(endorsementBody).subscribe(response => {
           console.log(response)
+          this.refresh()
         })
         break;
       }
@@ -60,6 +62,7 @@ export class CommentComponent implements OnInit {
       case "petition": {
         this.commentService.commentPetition(petitionBody).subscribe(response => {
           console.log(response)
+          this.refresh()
         })
         break;
       }
@@ -67,9 +70,11 @@ export class CommentComponent implements OnInit {
       case "blog": {
         this.commentService.commentPost(postBody).subscribe(response => {
           console.log(response)
+          this.refresh()
         })
         break;
       }
+
 
     }
     form.reset();

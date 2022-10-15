@@ -8,7 +8,7 @@ import {PetitionService} from "../../services/petition/petition.service";
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-  id: any = '1';
+  id: any = '634a1e7007d116e880068df8';
   posts: any;
   endorsePosts: any;
   petitionPosts: any;

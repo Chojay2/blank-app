@@ -42,7 +42,6 @@ export class EndorsementComponent implements OnInit {
   }
 
   onFormSubmit(form: FormGroup) {
-    debugger
     if (!form.valid) {
       this.showValidationErros = true;
       console.log('form is invalid');

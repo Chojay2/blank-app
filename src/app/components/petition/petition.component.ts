@@ -13,6 +13,7 @@ export class PetitionComponent implements OnInit {
   id: string = '';
   petition: any;
   petitions: any;
+  comments: any;
 
   signatureForm = this.fb.group({
     name: ['', Validators.required],
@@ -32,10 +33,15 @@ export class PetitionComponent implements OnInit {
     this.petitionDetail();
   }
 
+  convertDate(date: string){
+    return new Date(date).toDateString()
+  }
+
   petitionDetail(): void{
     this.petitionService.getAPost(this.id).subscribe(petition => {
       this.petition = petition;
-      console.log(this.petition)
+      this.comments = this.petition.comments
+      console.log(this.comments[0].user.profile)
     });
   }
 

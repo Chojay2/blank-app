@@ -12,14 +12,14 @@ export class CommentService {
 
 
   commentEndorsement(data: any): Observable<any> {
-    return this.http.post(`${this.baseURL}/endorsments/comment-endorsement`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NTA0NzA3fQ.YAj6lkNRUuyDnHj-CzzOS36fk8gz4rHawXllTlC1gFo')})
+    return this.http.post(`${this.baseURL}/endorsments/comment-endorsement`, data, {headers: new HttpHeaders().set('Authorization', `${localStorage.getItem("token")}`)})
     }
 
   commentPetition(data: any): Observable<any> {
-    return this.http.post(`${this.baseURL}/petitions/comment-petition`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NTA0NzA3fQ.YAj6lkNRUuyDnHj-CzzOS36fk8gz4rHawXllTlC1gFo')})
+    return this.http.post(`${this.baseURL}/petitions/comment-petition`, data, {headers: new HttpHeaders().set('Authorization', `${localStorage.getItem("token")}`)})
   }
   commentPost(data: any): Observable<any> {
-    return this.http.post(`${this.baseURL}/posts/comment-post`, data, {headers: new HttpHeaders().set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ0MGM1NjQ4MjVmNDRkODI4Yjk1OWQiLCJ1c2VyVHlwZSI6IkFkbWluIiwiaWF0IjoxNjY1NTA0NzA3fQ.YAj6lkNRUuyDnHj-CzzOS36fk8gz4rHawXllTlC1gFo')})
+    return this.http.post(`${this.baseURL}/posts/comment-post`, data, {headers: new HttpHeaders().set('Authorization', `${localStorage.getItem("token")}`)})
   }
 }
 

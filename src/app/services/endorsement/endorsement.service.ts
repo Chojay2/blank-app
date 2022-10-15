@@ -32,7 +32,7 @@ export class EndorsementService {
   }
 
   endorsePost(data: any): Observable<any> {
-    return this.http.post(`${this.baseURL}/public-endorsments/endorse-endorsement`, data)
+    return this.http.post(`${this.baseURL}/endorsments/endorse-endorsement`, data)
     }
 
   uploadAPost(data: any): Observable<any> {

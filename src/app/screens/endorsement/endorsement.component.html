@@ -26,7 +26,7 @@
         <div class="w-50 form">
             <div class="p-32 box--shadow-bottom" fxLayout="column" fxLayoutGap="32">
                 <p class="fs-24 fw-600 m-0">{{endoresement.endorse.length}} endorsed so far. Help us get to {{endoresement.goal}}</p>
-                <p-progressBar value="50"></p-progressBar>
+                <p-progressBar value="{{endoresement.endorse.length}}"></p-progressBar>
 
             </div>
             <form [formGroup]="signatureForm" (submit)="onFormSubmit(signatureForm)" action="" class="p-32 w-100" fxLayout="column" fxLayoutGap="32">
@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="w-60 mx-auto" fxLayout="column" fxLayoutAlign="center center">
-        <app-comment [id]="endoresement._id" [type]= "'endorsement'" class="w-100"></app-comment>
+        <app-comment [id]="endoresement._id" [refresh]="endorsementDetail()" [type]= "'endorsement'" class="w-100"></app-comment>
         <div class="w-100 bg-light py-20">
             <div class="w-100 px-60" fxLayout="row" fxLayoutAlign="space-between">
                 <h2 class="fw-500">Recent responses</h2>
@@ -58,12 +58,12 @@
             <div class="w-100 px-60" fxLayout="column" fxLayoutGap="20">
                 <div class="border--primary rounded bg-white" *ngFor="let response of comments">
                     <div class="p-20 box--shadow-bottom" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center">
-                        <img src="../../../assets/images/profile.png" alt="Profile picture"
+                        <img src="{{response.user.profile}}" class="rounded--circle" alt="Profile picture"
                         width="50" height="50">
                         <p class="text-primary fw-600">
-                            {{response.user.name}}<span class="text-black fw-500">commented on</span> Home
+                            {{response.user.name}}<span class="text-black fw-500"> commented on</span>
                         </p>
-                        <p>10.00pm 10 oct</p>
+                        <p>{{convertDate(response.time)}}</p>
                     </div>
                     <p class="p-20 m-0">{{response.comment}}</p>
                 </div>

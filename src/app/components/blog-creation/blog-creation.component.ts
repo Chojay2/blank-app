@@ -66,8 +66,9 @@ export class BlogCreationComponent implements OnInit {
 
       console.log(body);
 
-      this.blogPostService.addGallery(body, body.file).subscribe(val=>console.log(val));
-      form.reset();
+      this.blogPostService.addGallery(body, body.file).subscribe(val=>{
+        this.router.navigate(['/blog'])
+      });
     }
 
 

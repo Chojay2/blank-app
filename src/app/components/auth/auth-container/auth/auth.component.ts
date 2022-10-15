@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../../srvices/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-auth',
@@ -8,9 +9,10 @@ import { AuthService } from "../../srvices/auth.service";
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  @Input() close: any;
+  @Input() hide: any;
   cities: any;
   selectedCity1: any;
+
 
   signInForm = new FormGroup({
     email: new FormControl(''),
@@ -30,7 +32,7 @@ export class AuthComponent implements OnInit {
     location: ['', Validators.required]
   });
 
-  constructor(private auth: AuthService,private fb: FormBuilder) {
+  constructor(private auth: AuthService,private fb: FormBuilder, private router: Router) {
 
   }
 
@@ -55,6 +57,7 @@ export class AuthComponent implements OnInit {
       localStorage.setItem("userType", value.user.userType);
       localStorage.setItem("id", value.user._id);
       localStorage.setItem("profile", value.user.profile);
+      this.router.navigate(['/home']);
     })
 
   }
@@ -68,7 +71,7 @@ export class AuthComponent implements OnInit {
       file: this.signUpForm.value.fileSource,
       location: this.signUpForm.value.location
     }
-    this.auth.signup(body,body.file).subscribe(() =>  this.close())
+    this.auth.signup(body,body.file).subscribe(() =>  this.router.navigate(['/home']))
   }
 
   onFileChange(event: any) {
