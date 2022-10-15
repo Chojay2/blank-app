@@ -31,7 +31,7 @@ export class AuthComponent implements OnInit {
   });
 
   constructor(private auth: AuthService,private fb: FormBuilder) {
-  
+
   }
 
   ngOnInit(): void {
@@ -54,9 +54,9 @@ export class AuthComponent implements OnInit {
       localStorage.setItem("email", value.user.email);
       localStorage.setItem("userType", value.user.userType);
       localStorage.setItem("id", value.user._id);
-      this.close();
+      localStorage.setItem("profile", value.user.profile);
     })
-    
+
   }
 
   signUp(): void {
