@@ -12,7 +12,7 @@ import {PetitionService} from "../../services/petition/petition.service";
 export class MapComponent implements OnInit {
 
   // display = true;
-  anchorValue: string = "gsdfgf";
+  anchorValue: string = "Thimphu";
   endorsementPost: any;
   blogPost: any;
   petitionPost: any;
@@ -27,7 +27,7 @@ export class MapComponent implements OnInit {
      }
 
   ngOnInit(): void {
-    this.fetchEndorsementCount("gsdfgf");
+    this.fetchEndorsementCount("Thimphu");
   }
 
 fetchEndorsementCount(location: any) {

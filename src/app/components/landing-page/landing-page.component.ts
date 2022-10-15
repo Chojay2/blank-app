@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {EndorsementService} from "../../services/endorsement/endorsement.service";
+import {PetitionService} from "../../services/petition/petition.service";
 
 @Component({
   selector: 'app-landing-page',
@@ -6,40 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
+  id: any = '1';
+  posts: any;
+  endorsePosts: any;
+  petitionPosts: any;
 
-  posts = [
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    },
-    {
-      cover: '',
-      profile: '',
-      name: '',
-      title: 'This is a blog post title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem vebulum, elementum.',
-      date: '2022/10/10',
-      views: '2K Views'
-    }
-  ];
-
-  constructor() { }
+  constructor( private endorsementService : EndorsementService, private petitionService : PetitionService) { }
 
   ngOnInit(): void {
+    this.endorsementService.getAPost(this.id).subscribe(data=> {
+        this.posts = data;
+      }
+    );
+
+    this.endorsementService.getPost().subscribe(data=> {
+        this.endorsePosts = data;
+      }
+    );
+
+    this.petitionService.getPost().subscribe(data => {
+      this.petitionPosts = data;
+    })
   }
+
+
 
 }

@@ -16,6 +16,9 @@ export class EndorsementService {
   getAllPost(): Observable<any> {
     return this.http.get(`${this.baseURL}/public-endorsments/get-endorsements?skip=0&limit=9`)
  }
+  getPost(): Observable<any> {
+    return this.http.get(`${this.baseURL}/public-endorsments/get-endorsements?skip=0&limit=3`)
+  }
 
    getAPost(id: any): Observable<any> {
     return this.http.get(`${this.baseURL}/public-endorsments/get-endorsement?endorsementId=${id}`)
