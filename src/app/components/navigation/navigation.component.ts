@@ -10,7 +10,9 @@ export class NavigationComponent implements OnInit {
   lists: string[];
   userId: any;
   userName = localStorage.getItem('name')
+  profile = localStorage.getItem('profile')
   constructor() {
+    console.log(this.profile);
     this.lists = ['Home', 'Endorsement', 'Petition', 'Blog', 'Recommendations'];
   }
 

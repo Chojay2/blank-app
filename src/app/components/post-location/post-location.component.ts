@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EndorsementService} from "../../services/endorsement/endorsement.service";
 import { ActivatedRoute, Params } from '@angular/router';
+import {catagories} from "../../shared/constants";
 
 
 @Component({
@@ -12,6 +13,8 @@ export class PostLocationComponent implements OnInit {
   location: any;
   items: string[];
   posts: any;
+
+  categories = catagories;
 
   constructor(private endorsementService: EndorsementService, private route: ActivatedRoute) {
     this.items = ['All', 'Technology', 'Sports', 'Programming'];

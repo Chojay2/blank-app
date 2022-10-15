@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PetitionService } from 'src/app/services/petition/petition.service';
+import {catagories} from "../../shared/constants";
 
 @Component({
   selector: 'app-upload-petition',
@@ -9,6 +10,8 @@ import { PetitionService } from 'src/app/services/petition/petition.service';
   styleUrls: ['./upload-petition.component.scss']
 })
 export class UploadPetitionComponent implements OnInit {
+
+  categories = catagories;
 
   petitionForm = this.fb.group({
     title: ['', Validators.required],

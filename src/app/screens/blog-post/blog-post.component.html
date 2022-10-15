@@ -23,40 +23,26 @@
         </div>
         <div class="w-90 mx-auto py-50 post" fxLayout="row wrap" fxLayoutAlign="start">
             <div class="post-cards position--relative" fxLayout="column" fxLayoutGap="20" fxLayoutAlign="center" *ngFor="let post of posts">
-                <img src="{{post.image}}" class="position--relative rounded" height="420" alt="post cover">
+                <img src="{{post.image}}" class="position--relative rounded rounded--md" height="420" alt="post cover">
                 <div class="post__chip bg-white pe-12 rounded--lg position--absolute cursor--pointer" fxLayout="row" fxLayoutGap="12" fxLayoutAlign="start center" fxFlexAlign="center">
-                    <img src="../../../assets/images/profile.png" width="40" height="40" alt="profile">
+                    <img src="{{post.user.profile}}" class="rounded--circle" width="40" height="40" alt="profile">
                     <p class="text-primary">{{post.user.name}}</p>
                 </div>
                 <div class="position--absolute bg-white px-4 pt-4 pb-0 rounded--lg cursor--pointer bookmark m-16">
                   <i class="pi pi-heart-fill" style="font-size: 24px"></i>
                 </div>
                 <h2 class="fs-28 m-0">{{post.title}}</h2>
-                <p class="text-primary fs-20 box--shadow-bottom m-0 pb-20">{{post.description}}</p>
+                <div class="text-primary elipses fs-20 box--shadow-bottom m-0 pb-20" [innerHTML]="post.description"></div>
                 <div class="text-primary" fxLayout="row" fxLayoutAlign="space-between center">
                   <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
                     <i class="pi pi-calendar me-16" ></i>
-                    {{post.date}}
+                    15/10/2022
                   </p>
                   <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
                     <i class="pi pi-eye me-16" ></i>
-                    {{post.views}}
+                    15
                   </p>
                 </div>
-                <button class="btn-outline-dark rounded--lg">Read More</button>
-                <div class="text-primary fs-20 box--shadow-bottom m-0 pb-20 text-editor">
-                  <div class="" [innerHTML]="post.description">
-                  </div></div>
-              <div class="text-primary" fxLayout="row" fxLayoutAlign="space-between center">
-                <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
-                  <i class="pi pi-calendar me-16" ></i>
-                  {{post.date}}
-                </p>
-                <p class="m-0" fxLayout="row" fxLayoutAlign="start center">
-                  <i class="pi pi-eye me-16" ></i>
-                  {{post.views}}
-                </p>
-              </div>
               <button class="btn-outline-dark rounded--lg" (click)="readMore(post._id)">Read More</button>
             </div>
         </div>
