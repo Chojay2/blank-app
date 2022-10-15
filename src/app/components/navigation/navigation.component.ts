@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-
+  session: any;
   lists: string[];
+  userId: any;
   userName = localStorage.getItem('name')
   profile = localStorage.getItem('profile')
   constructor() {
@@ -16,7 +17,8 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.session = localStorage.getItem("token");
+    this.userId = localStorage.getItem("id");
   }
 
   displayModal: boolean;

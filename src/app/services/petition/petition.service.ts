@@ -13,8 +13,12 @@ export class PetitionService {
 
 
   getAllPost(): Observable<any> {
-    return this.http.get(`${this.baseURL}/public-petitions/get-petitions?skip=0&limit=20`)
+    return this.http.get(`${this.baseURL}/public-petitions/get-petitions?skip=0&limit=9`)
  }
+
+  getPost(): Observable<any> {
+    return this.http.get(`${this.baseURL}/public-petitions/get-petitions?skip=0&limit=3`)
+  }
 
  getAPost(id: any): Observable<any> {
   return this.http.get(`${this.baseURL}/public-petitions/get-petition?petitionId=${id}`)
