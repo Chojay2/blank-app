@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
+import {catagories} from "../../shared/constants";
 
 @Component({
   selector: 'app-post-endorsement',
@@ -9,6 +10,9 @@ import { EndorsementService } from 'src/app/services/endorsement/endorsement.ser
   styleUrls: ['./post-endorsement.component.scss']
 })
 export class PostEndorsementComponent implements OnInit {
+
+  categories = catagories;
+
   endorsementForm = this.fb.group({
     title: ['', Validators.required],
     goal: ['', Validators.required],
