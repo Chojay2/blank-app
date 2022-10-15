@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from "@angular/router";
+import { filter } from "rxjs";
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +13,7 @@ export class NavigationComponent implements OnInit {
   userId: any;
   userName = localStorage.getItem('name')
   profile = localStorage.getItem('profile')
-  constructor() {
+  constructor(private router: Router) {
     console.log(this.profile);
     this.lists = ['Home', 'Endorsement', 'Petition', 'Blog', 'Recommendations'];
   }
@@ -19,6 +21,9 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
     this.session = localStorage.getItem("token");
     this.userId = localStorage.getItem("id");
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {
+      this.hideLoginDialog();
+    });
   }
 
   displayModal: boolean;
@@ -26,9 +31,7 @@ export class NavigationComponent implements OnInit {
   showModalDialog() {
     this.displayModal = true;
   }
-  hideDialog($event){
-    this.hideModalDialog();
-  }
+
   hideModalDialog() {
     this.displayModal = false;
   }

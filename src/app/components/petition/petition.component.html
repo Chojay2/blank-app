@@ -2,6 +2,14 @@
   <div class="w-70 mx-auto" fxLayout="row" fxLayoutGap="60">
     <div class="w-50">
       <h1 class="fs-38">{{petition.title}}</h1>
+      <div fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start center">
+        <img src="{{petition.user.profile}}" class="rounded--circle" alt="profile" width="50" height="50">
+        <div fxLayout="column">
+          <p class="m-0 fs-20 fw-400">Written by {{petition.user.name}}</p>
+          <p class="my-2">{{convertDate(petition.createdAt)}}</p>
+          <p class="my-2">{{petition.user.location.dzongkhag}}</p>
+        </div>
+      </div>
       <div class="fs-24 w-80" [innerHTML]="petition.description"></div>
     </div>
     <div class="w-50 form">
@@ -38,23 +46,23 @@
     </div>
   </div>
   <div class="w-60 mx-auto" fxLayout="column" fxLayoutAlign="center center">
-    <app-comment class="w-100" [id]="petition._id" [type]="'petition'"></app-comment>
+    <app-comment class="w-100" [refresh]="petitionDetail()" [id]="petition._id" [type]="'petition'"></app-comment>
     <div class="w-100 bg-light py-20">
       <div class="w-100 px-60" fxLayout="row" fxLayoutAlign="space-between">
         <h2 class="fw-500">Recent responses</h2>
         <p class="text-primary cursor--pointer">+ Follow reactions</p>
       </div>
       <div class="w-100 px-60" fxLayout="column" fxLayoutGap="20">
-        <div class="border--primary rounded bg-white" *ngFor="let response of petition">
+        <div class="border--primary rounded bg-white" *ngFor="let response of comments">
           <div class="p-20 box--shadow-bottom" fxLayout="row" fxLayoutGap="10" fxLayoutAlign="start center">
-            <img src="../../../assets//images/profile.png" alt="Profile picture"
+            <img src="{{response.user.profile}}" class="rounded--circle" alt="Profile picture"
                  width="50" height="50">
             <p class="text-primary fw-600">
-              {{response.name}}<span class="text-black fw-500">commented on</span> Home
+              {{response.user.name}}<span class="text-black fw-500"> commented on</span>
             </p>
-            <p>{{response.time}}</p>
+            <p>{{convertDate(response.time)}}</p>
           </div>
-          <p class="p-20 m-0">{{response.description}}</p>
+          <p class="p-20 m-0">{{response.comment}}</p>
         </div>
       </div>
     </div>

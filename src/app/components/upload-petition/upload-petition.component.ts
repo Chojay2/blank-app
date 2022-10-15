@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PetitionService } from 'src/app/services/petition/petition.service';
 import {catagories} from "../../shared/constants";
+import { Route, Router } from "@angular/router";
 
 @Component({
   selector: 'app-upload-petition',
@@ -36,7 +37,7 @@ export class UploadPetitionComponent implements OnInit {
   }
 
 
-  constructor(private fb: FormBuilder, private petitionService: PetitionService, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private petitionService: PetitionService, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -69,7 +70,9 @@ export class UploadPetitionComponent implements OnInit {
 
     console.log(body);
 
-    this.petitionService.addGallery(body, body.file).subscribe(val=>console.log(val));
+    this.petitionService.addGallery(body, body.file).subscribe(val=>{
+      this.router.navigate(['/petition'])
+    });
     //form.reset();
   }
 

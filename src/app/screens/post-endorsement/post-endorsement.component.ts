@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { EndorsementService } from 'src/app/services/endorsement/endorsement.service';
 import {catagories} from "../../shared/constants";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-post-endorsement',
@@ -34,7 +35,7 @@ export class PostEndorsementComponent implements OnInit {
   }
 
 
-  constructor(private fb: FormBuilder, private endorsementService: EndorsementService, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private endorsementService: EndorsementService, private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -67,8 +68,9 @@ export class PostEndorsementComponent implements OnInit {
       file: form.value.fileSource
     }
 
-    this.endorsementService.addGallery(body, body.file).subscribe(val=>console.log(val));
-    form.reset();
+    this.endorsementService.addGallery(body, body.file).subscribe(val=>{
+      this.router.navigate(['/endorsement'])
+    });
   }
 
 
