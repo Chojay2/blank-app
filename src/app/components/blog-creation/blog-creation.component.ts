@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {catagories} from "../../shared/constants";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { BlogPostService } from "../../services/blog-post/blog-post.service";
 import { Router } from "@angular/router";
@@ -9,6 +10,8 @@ import { Router } from "@angular/router";
   styleUrls: ['./blog-creation.component.scss']
 })
 export class BlogCreationComponent implements OnInit {
+  catagories = catagories;
+
   showValidationErros: boolean = false;
   files: File[] = [];
   items: string[];
