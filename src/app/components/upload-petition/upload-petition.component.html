@@ -17,9 +17,9 @@
       <h3>Category</h3>
       <div fxLayout="row wrap" fxLayoutGap="30">
         <div class="my-10" fxLayout="row" fxLayoutGap="16" fxLayoutAlign="start center"
-             *ngFor="let number of [0,1,2,3,4,5]">
+             *ngFor="let number of categories">
           <input type="checkbox">
-          <label>This is a checkbox</label>
+          <label>{{number}}</label>
         </div>
       </div>
     </div>
