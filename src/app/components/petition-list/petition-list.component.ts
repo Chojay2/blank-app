@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PetitionService } from 'src/app/services/petition/petition.service';
 import { Router } from '@angular/router';
+import {catagories} from "../../shared/constants";
 
 @Component({
   selector: 'app-petition-list',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class PetitionListComponent implements OnInit {
   posts: any;
   items: string[];
+  categories = catagories;
 
   constructor(private petitionService: PetitionService, private router: Router) {
     this.items = ['All', 'Technology', 'Sports', 'Programming', 'Something', 'Anything'];
